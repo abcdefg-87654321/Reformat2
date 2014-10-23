@@ -1,0 +1,1037 @@
+2014-10-19 11:38:28,187 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:38:28,197 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:38:28,247 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:38:28,447 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:38:28,477 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:38:28,577 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995aqk2c3tj7onv|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995aqk2c3tj7onv|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:38:28,937 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:38:28,937 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:38:28,947 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:38:28,947 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:38:28,947 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:38:28,947 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:38:28,947 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:38:28,947 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:38:28,947 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:38:28,947 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:38:28,947 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:38:28,947 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-19 11:38:28,957 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:38:28,957 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:38:28,957 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:38:28,957 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:40:34,121 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:40:34,172 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:40:34,172 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:40:34,529 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <85> ms
+2014-10-19 11:40:34,538 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 11:40:34,539 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 11:40:34,539 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:40:34,539 TransactionManager.java       [ 268] INFO  -             Duration <366> ms
+2014-10-19 11:40:34,539 TransactionManager.java       [ 270] INFO  -             Speed    <2> records /sec
+2014-10-19 11:40:49,510 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:40:49,522 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:40:49,522 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:40:49,528 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <4> ms
+2014-10-19 11:40:49,531 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 11:40:49,532 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 11:40:49,532 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:40:49,532 TransactionManager.java       [ 268] INFO  -             Duration <9> ms
+2014-10-19 11:40:49,532 TransactionManager.java       [ 270] INFO  -             Speed    <111> records /sec
+2014-10-19 11:42:09,626 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:42:09,646 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:09,648 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:09,653 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <4> ms
+2014-10-19 11:42:09,659 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 11:42:09,659 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 11:42:09,659 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:42:09,660 TransactionManager.java       [ 268] INFO  -             Duration <13> ms
+2014-10-19 11:42:09,660 TransactionManager.java       [ 270] INFO  -             Speed    <76> records /sec
+2014-10-19 11:42:13,809 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:42:13,817 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:13,818 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:13,822 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:42:13,825 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-19 11:42:13,825 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-19 11:42:13,825 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:42:13,826 TransactionManager.java       [ 268] INFO  -             Duration <8> ms
+2014-10-19 11:42:13,826 TransactionManager.java       [ 270] INFO  -             Speed    <125> records /sec
+2014-10-19 11:42:33,906 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:42:33,974 TransactionManager.java       [ 228] INFO  - Opened transaction <5> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:33,974 TransactionManager.java       [ 229] INFO  - Opened transaction <5> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:33,977 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <2> ms
+2014-10-19 11:42:33,980 TransactionManager.java       [ 265] INFO  - Transaction <5> closed
+2014-10-19 11:42:33,980 TransactionManager.java       [ 266] INFO  - Transaction <5> closed
+2014-10-19 11:42:33,980 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:42:33,980 TransactionManager.java       [ 268] INFO  -             Duration <6> ms
+2014-10-19 11:42:33,980 TransactionManager.java       [ 270] INFO  -             Speed    <166> records /sec
+2014-10-19 11:42:39,952 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:42:39,964 TransactionManager.java       [ 228] INFO  - Opened transaction <6> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:39,964 TransactionManager.java       [ 229] INFO  - Opened transaction <6> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:39,968 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:42:39,980 TransactionManager.java       [ 265] INFO  - Transaction <6> closed
+2014-10-19 11:42:39,980 TransactionManager.java       [ 266] INFO  - Transaction <6> closed
+2014-10-19 11:42:39,981 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:42:39,981 TransactionManager.java       [ 268] INFO  -             Duration <16> ms
+2014-10-19 11:42:39,981 TransactionManager.java       [ 270] INFO  -             Speed    <62> records /sec
+2014-10-19 11:42:46,752 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:42:46,798 TransactionManager.java       [ 228] INFO  - Opened transaction <7> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:46,798 TransactionManager.java       [ 229] INFO  - Opened transaction <7> for pipeline <Reformat2Pipe>
+2014-10-19 11:42:46,804 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:42:46,808 TransactionManager.java       [ 265] INFO  - Transaction <7> closed
+2014-10-19 11:42:46,808 TransactionManager.java       [ 266] INFO  - Transaction <7> closed
+2014-10-19 11:42:46,808 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:42:46,808 TransactionManager.java       [ 268] INFO  -             Duration <10> ms
+2014-10-19 11:42:46,808 TransactionManager.java       [ 270] INFO  -             Speed    <100> records /sec
+2014-10-19 11:43:06,777 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:43:06,780 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:43:06,806 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:43:07,007 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:43:07,048 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:43:07,182 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995aqq19qj7am5i|140e5a13, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995aqq19qj7am5i|140e5a13, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:43:07,584 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:43:07,588 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:43:07,592 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:43:07,592 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:43:07,596 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:43:07,597 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:43:07,600 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:43:07,600 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:43:07,600 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:43:07,601 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:43:07,601 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:43:07,601 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 11:43:07,605 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:43:07,613 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:43:07,614 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:43:07,618 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:43:53,258 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:43:53,372 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:43:53,372 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:52:55,387 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:52:55,391 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:52:55,429 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:52:55,914 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:52:55,954 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:52:56,154 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995ar2nni1xujerl|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995ar2nni1xujerl|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:52:56,575 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:52:56,579 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:52:56,583 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:52:56,583 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:52:56,586 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:52:56,587 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:52:56,590 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:52:56,590 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:52:56,591 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:52:56,591 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:52:56,591 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:52:56,592 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 11:52:56,595 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:52:56,600 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:52:56,600 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:52:56,601 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:52:56,629 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:52:56,644 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:52:56,644 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:52:56,671 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <8> ms
+2014-10-19 11:52:56,674 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 11:52:56,674 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 11:52:56,675 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:52:56,675 TransactionManager.java       [ 268] INFO  -             Duration <30> ms
+2014-10-19 11:52:56,675 TransactionManager.java       [ 270] INFO  -             Speed    <33> records /sec
+2014-10-19 11:53:02,040 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:53:02,061 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:53:02,062 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:53:02,066 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:53:02,069 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 11:53:02,070 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 11:53:02,070 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:53:02,070 TransactionManager.java       [ 268] INFO  -             Duration <8> ms
+2014-10-19 11:53:02,070 TransactionManager.java       [ 270] INFO  -             Speed    <125> records /sec
+2014-10-19 11:54:42,178 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:54:42,201 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:54:42,201 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:54:42,208 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <4> ms
+2014-10-19 11:54:42,212 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 11:54:42,212 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 11:54:42,212 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:54:42,212 TransactionManager.java       [ 268] INFO  -             Duration <11> ms
+2014-10-19 11:54:42,213 TransactionManager.java       [ 270] INFO  -             Speed    <90> records /sec
+2014-10-19 11:54:49,211 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:54:49,225 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 11:54:49,226 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 11:54:49,230 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:54:49,234 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-19 11:54:49,234 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-19 11:54:49,235 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:54:49,235 TransactionManager.java       [ 268] INFO  -             Duration <9> ms
+2014-10-19 11:54:49,235 TransactionManager.java       [ 270] INFO  -             Speed    <111> records /sec
+2014-10-19 11:55:56,823 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:55:56,825 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:55:56,849 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:55:57,035 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:55:57,068 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:55:57,165 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995ar6jfm11orqh5|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995ar6jfm11orqh5|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:55:57,542 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:55:57,545 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:55:57,548 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:55:57,548 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:55:57,551 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:55:57,551 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:55:57,554 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:55:57,554 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:55:57,555 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:55:57,555 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:55:57,556 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:55:57,556 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 11:55:57,560 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:55:57,564 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:55:57,565 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:55:57,568 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:56:07,605 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:56:07,627 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:56:07,628 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:56:07,654 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <8> ms
+2014-10-19 11:56:07,659 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 11:56:07,660 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 11:56:07,663 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:56:07,663 TransactionManager.java       [ 268] INFO  -             Duration <32> ms
+2014-10-19 11:56:07,663 TransactionManager.java       [ 270] INFO  -             Speed    <31> records /sec
+2014-10-19 11:56:22,703 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:56:22,724 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:56:22,725 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:56:22,729 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <3> ms
+2014-10-19 11:56:22,736 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 11:56:22,737 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 11:56:22,737 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:56:22,737 TransactionManager.java       [ 268] INFO  -             Duration <12> ms
+2014-10-19 11:56:22,737 TransactionManager.java       [ 270] INFO  -             Speed    <83> records /sec
+2014-10-19 11:56:42,728 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:56:42,731 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:56:42,755 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:56:42,961 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:56:43,002 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:56:43,145 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995ar7iux23bxu2|140e5a13, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995ar7iux23bxu2|140e5a13, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:56:43,574 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:56:43,581 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:56:43,581 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:56:43,585 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:56:43,587 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:56:43,594 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:56:43,594 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:56:43,596 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:56:43,597 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:56:43,598 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:56:43,598 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 17ms.
+2014-10-19 11:56:43,601 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:56:43,607 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:56:43,610 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:56:43,612 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:56:43,625 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:56:49,705 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:56:49,721 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:56:49,721 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:58:44,181 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:58:44,184 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:58:44,213 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:58:44,404 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:58:44,438 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:58:44,538 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995ara4kq9m610x|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995ara4kq9m610x|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:58:44,904 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:58:44,908 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:58:44,911 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:58:44,912 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:58:44,915 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:58:44,915 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:58:44,918 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:58:44,918 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:58:44,919 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:58:44,919 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:58:44,919 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:58:44,920 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 11:58:44,923 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:58:44,928 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:58:44,928 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:58:44,929 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:58:44,959 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:58:44,977 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:58:44,977 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:58:45,003 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <9> ms
+2014-10-19 11:58:45,006 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 11:58:45,006 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 11:58:45,006 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:58:45,007 TransactionManager.java       [ 268] INFO  -             Duration <29> ms
+2014-10-19 11:58:45,007 TransactionManager.java       [ 270] INFO  -             Speed    <34> records /sec
+2014-10-19 11:58:48,957 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:58:48,962 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:58:48,962 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 11:58:48,977 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <12> ms
+2014-10-19 11:58:48,980 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 11:58:48,980 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 11:58:48,980 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:58:48,980 TransactionManager.java       [ 268] INFO  -             Duration <18> ms
+2014-10-19 11:58:48,981 TransactionManager.java       [ 270] INFO  -             Speed    <55> records /sec
+2014-10-19 11:59:04,004 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:59:04,020 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:59:04,020 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 11:59:04,029 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <7> ms
+2014-10-19 11:59:04,032 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 11:59:04,033 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 11:59:04,033 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 11:59:04,033 TransactionManager.java       [ 268] INFO  -             Duration <12> ms
+2014-10-19 11:59:04,033 TransactionManager.java       [ 270] INFO  -             Speed    <83> records /sec
+2014-10-19 11:59:18,234 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 11:59:18,237 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 11:59:18,262 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 11:59:18,460 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 11:59:18,496 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 11:59:18,628 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995arauu98i67z7|140e5a13, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995arauu98i67z7|140e5a13, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 11:59:19,054 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 11:59:19,058 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 11:59:19,063 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 11:59:19,063 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 11:59:19,067 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 11:59:19,068 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 11:59:19,071 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 11:59:19,071 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 11:59:19,072 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 11:59:19,072 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 11:59:19,072 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 11:59:19,072 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 11:59:19,076 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 11:59:19,082 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 11:59:19,082 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 11:59:19,083 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 11:59:22,927 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 11:59:22,944 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 11:59:22,944 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:10,929 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:07:10,932 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:07:10,960 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:07:11,176 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:07:11,209 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:07:11,314 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995arkzls1ikdick|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995arkzls1ikdick|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:07:11,727 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:07:11,730 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:07:11,734 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:07:11,734 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:07:11,737 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:07:11,738 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:07:11,740 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:07:11,740 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:07:11,741 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:07:11,741 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:07:11,741 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:07:11,741 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 7ms.
+2014-10-19 12:07:11,744 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:07:11,749 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:07:11,749 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:07:11,750 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:07:26,790 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 12:07:26,820 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:26,820 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:26,852 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <8> ms
+2014-10-19 12:07:26,855 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:07:26,855 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:07:26,856 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 12:07:26,857 TransactionManager.java       [ 268] INFO  -             Duration <35> ms
+2014-10-19 12:07:26,857 TransactionManager.java       [ 270] INFO  -             Speed    <28> records /sec
+2014-10-19 12:07:31,209 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 12:07:31,226 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:31,227 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:31,231 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <2> ms
+2014-10-19 12:07:31,233 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 12:07:31,234 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 12:07:31,234 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 12:07:31,234 TransactionManager.java       [ 268] INFO  -             Duration <7> ms
+2014-10-19 12:07:31,234 TransactionManager.java       [ 270] INFO  -             Speed    <142> records /sec
+2014-10-19 12:07:46,269 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <1> events for processing
+2014-10-19 12:07:46,295 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:46,295 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:07:46,302 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <3> events from a batch of <3> events in <4> ms
+2014-10-19 12:07:46,305 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 12:07:46,305 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 12:07:46,305 TransactionManager.java       [ 267] INFO  - Statistics: Records  <1>
+2014-10-19 12:07:46,305 TransactionManager.java       [ 268] INFO  -             Duration <10> ms
+2014-10-19 12:07:46,305 TransactionManager.java       [ 270] INFO  -             Speed    <100> records /sec
+2014-10-19 12:08:26,343 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:08:26,364 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:26,365 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:26,408 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <30> ms
+2014-10-19 12:08:26,412 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-19 12:08:26,412 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-19 12:08:26,412 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:08:26,412 TransactionManager.java       [ 268] INFO  -             Duration <48> ms
+2014-10-19 12:08:26,412 TransactionManager.java       [ 270] INFO  -             Speed    <208> records /sec
+2014-10-19 12:08:32,461 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:08:32,523 TransactionManager.java       [ 228] INFO  - Opened transaction <5> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:32,524 TransactionManager.java       [ 229] INFO  - Opened transaction <5> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:32,558 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <27> ms
+2014-10-19 12:08:32,562 TransactionManager.java       [ 265] INFO  - Transaction <5> closed
+2014-10-19 12:08:32,562 TransactionManager.java       [ 266] INFO  - Transaction <5> closed
+2014-10-19 12:08:32,562 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:08:32,562 TransactionManager.java       [ 268] INFO  -             Duration <39> ms
+2014-10-19 12:08:32,562 TransactionManager.java       [ 270] INFO  -             Speed    <256> records /sec
+2014-10-19 12:08:38,909 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:08:38,959 TransactionManager.java       [ 228] INFO  - Opened transaction <6> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:38,960 TransactionManager.java       [ 229] INFO  - Opened transaction <6> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:38,973 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <9> ms
+2014-10-19 12:08:38,980 TransactionManager.java       [ 265] INFO  - Transaction <6> closed
+2014-10-19 12:08:38,981 TransactionManager.java       [ 266] INFO  - Transaction <6> closed
+2014-10-19 12:08:38,981 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:08:38,981 TransactionManager.java       [ 268] INFO  -             Duration <21> ms
+2014-10-19 12:08:38,981 TransactionManager.java       [ 270] INFO  -             Speed    <476> records /sec
+2014-10-19 12:08:45,239 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:08:45,301 TransactionManager.java       [ 228] INFO  - Opened transaction <7> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:45,301 TransactionManager.java       [ 229] INFO  - Opened transaction <7> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:45,314 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <11> ms
+2014-10-19 12:08:45,318 TransactionManager.java       [ 265] INFO  - Transaction <7> closed
+2014-10-19 12:08:45,318 TransactionManager.java       [ 266] INFO  - Transaction <7> closed
+2014-10-19 12:08:45,319 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:08:45,319 TransactionManager.java       [ 268] INFO  -             Duration <17> ms
+2014-10-19 12:08:45,319 TransactionManager.java       [ 270] INFO  -             Speed    <588> records /sec
+2014-10-19 12:08:50,259 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:08:50,352 TransactionManager.java       [ 228] INFO  - Opened transaction <8> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:50,352 TransactionManager.java       [ 229] INFO  - Opened transaction <8> for pipeline <Reformat2Pipe>
+2014-10-19 12:08:50,380 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <25> ms
+2014-10-19 12:08:50,385 TransactionManager.java       [ 265] INFO  - Transaction <8> closed
+2014-10-19 12:08:50,385 TransactionManager.java       [ 266] INFO  - Transaction <8> closed
+2014-10-19 12:08:50,385 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:08:50,385 TransactionManager.java       [ 268] INFO  -             Duration <33> ms
+2014-10-19 12:08:50,386 TransactionManager.java       [ 270] INFO  -             Speed    <303> records /sec
+2014-10-19 12:09:20,389 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:09:20,404 TransactionManager.java       [ 228] INFO  - Opened transaction <9> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:20,404 TransactionManager.java       [ 229] INFO  - Opened transaction <9> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:20,426 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <19> ms
+2014-10-19 12:09:20,430 TransactionManager.java       [ 265] INFO  - Transaction <9> closed
+2014-10-19 12:09:20,431 TransactionManager.java       [ 266] INFO  - Transaction <9> closed
+2014-10-19 12:09:20,431 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:09:20,431 TransactionManager.java       [ 268] INFO  -             Duration <26> ms
+2014-10-19 12:09:20,431 TransactionManager.java       [ 270] INFO  -             Speed    <384> records /sec
+2014-10-19 12:09:23,745 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:09:23,757 TransactionManager.java       [ 228] INFO  - Opened transaction <10> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:23,757 TransactionManager.java       [ 229] INFO  - Opened transaction <10> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:23,781 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <15> ms
+2014-10-19 12:09:23,789 TransactionManager.java       [ 265] INFO  - Transaction <10> closed
+2014-10-19 12:09:23,789 TransactionManager.java       [ 266] INFO  - Transaction <10> closed
+2014-10-19 12:09:23,789 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:09:23,789 TransactionManager.java       [ 268] INFO  -             Duration <32> ms
+2014-10-19 12:09:23,789 TransactionManager.java       [ 270] INFO  -             Speed    <312> records /sec
+2014-10-19 12:09:28,125 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:09:28,191 TransactionManager.java       [ 228] INFO  - Opened transaction <11> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:28,191 TransactionManager.java       [ 229] INFO  - Opened transaction <11> for pipeline <Reformat2Pipe>
+2014-10-19 12:09:28,203 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <10> ms
+2014-10-19 12:09:28,206 TransactionManager.java       [ 265] INFO  - Transaction <11> closed
+2014-10-19 12:09:28,207 TransactionManager.java       [ 266] INFO  - Transaction <11> closed
+2014-10-19 12:09:28,207 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:09:28,207 TransactionManager.java       [ 268] INFO  -             Duration <15> ms
+2014-10-19 12:09:28,207 TransactionManager.java       [ 270] INFO  -             Speed    <666> records /sec
+2014-10-19 12:10:11,921 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:10:11,923 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:10:11,947 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:10:12,141 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:10:12,176 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:10:12,276 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995arov8e163e054|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995arov8e163e054|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:10:12,687 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:10:12,691 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:10:12,695 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:10:12,696 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:10:12,699 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:10:12,699 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:10:12,702 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:10:12,702 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:10:12,702 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:10:12,703 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:10:12,703 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:10:12,703 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 12:10:12,706 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:10:12,711 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:10:12,711 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:10:12,713 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:10:42,775 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:10:42,801 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:10:42,801 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:10:42,852 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <14> ms
+2014-10-19 12:10:42,857 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:10:42,857 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:10:42,857 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:10:42,857 TransactionManager.java       [ 268] INFO  -             Duration <56> ms
+2014-10-19 12:10:42,857 TransactionManager.java       [ 270] INFO  -             Speed    <178> records /sec
+2014-10-19 12:10:49,027 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:10:49,051 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:10:49,052 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:10:49,066 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <6> ms
+2014-10-19 12:10:49,070 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 12:10:49,070 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 12:10:49,070 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:10:49,070 TransactionManager.java       [ 268] INFO  -             Duration <19> ms
+2014-10-19 12:10:49,070 TransactionManager.java       [ 270] INFO  -             Speed    <526> records /sec
+2014-10-19 12:11:09,116 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:11:09,139 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:11:09,140 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:11:09,168 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <16> ms
+2014-10-19 12:11:09,171 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 12:11:09,171 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 12:11:09,171 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:11:09,171 TransactionManager.java       [ 268] INFO  -             Duration <32> ms
+2014-10-19 12:11:09,171 TransactionManager.java       [ 270] INFO  -             Speed    <312> records /sec
+2014-10-19 12:12:50,167 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:12:50,169 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:12:50,194 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:12:50,480 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:12:50,531 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:12:50,661 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995ars9du1tzsfqe|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995ars9du1tzsfqe|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:12:51,023 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:12:51,027 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:12:51,030 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:12:51,031 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:12:51,034 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:12:51,034 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:12:51,038 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:12:51,038 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:12:51,038 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:12:51,039 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:12:51,039 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:12:51,039 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 12:12:51,042 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:12:51,048 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:12:51,048 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:12:51,049 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:13:11,093 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:13:11,123 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:11,124 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:11,187 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <21> ms
+2014-10-19 12:13:11,191 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:13:11,191 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:13:11,191 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:13:11,192 TransactionManager.java       [ 268] INFO  -             Duration <68> ms
+2014-10-19 12:13:11,192 TransactionManager.java       [ 270] INFO  -             Speed    <147> records /sec
+2014-10-19 12:13:19,782 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:13:19,804 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:19,805 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:19,824 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <6> ms
+2014-10-19 12:13:19,834 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 12:13:19,834 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 12:13:19,834 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:13:19,834 TransactionManager.java       [ 268] INFO  -             Duration <30> ms
+2014-10-19 12:13:19,834 TransactionManager.java       [ 270] INFO  -             Speed    <333> records /sec
+2014-10-19 12:13:25,209 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:13:25,211 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:13:25,234 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:13:25,419 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:13:25,451 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:13:25,547 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995art0dji2d5dl|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995art0dji2d5dl|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:13:25,909 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:13:25,912 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:13:25,916 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:13:25,916 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:13:25,919 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:13:25,920 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:13:25,923 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:13:25,923 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:13:25,923 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:13:25,923 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:13:25,924 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:13:25,924 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 12:13:25,927 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:13:25,932 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:13:25,932 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:13:25,933 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:13:30,964 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:13:31,007 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:31,008 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:13:31,069 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <19> ms
+2014-10-19 12:13:31,075 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:13:31,075 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:13:31,075 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:13:31,076 TransactionManager.java       [ 268] INFO  -             Duration <68> ms
+2014-10-19 12:13:31,076 TransactionManager.java       [ 270] INFO  -             Speed    <147> records /sec
+2014-10-19 12:14:02,313 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:14:02,315 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:14:02,336 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:14:02,524 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:14:02,557 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:14:02,660 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995artszz1mxlv52|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995artszz1mxlv52|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:14:03,036 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:14:03,039 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:14:03,042 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:14:03,043 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:14:03,045 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:14:03,046 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:14:03,049 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:14:03,049 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:14:03,049 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:14:03,049 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:14:03,050 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:14:03,050 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 12:14:03,053 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:14:03,058 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:14:03,058 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:14:03,060 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:14:03,088 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:14:03,104 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:03,104 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:03,144 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <19> ms
+2014-10-19 12:14:03,147 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:14:03,148 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:14:03,148 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:14:03,148 TransactionManager.java       [ 268] INFO  -             Duration <43> ms
+2014-10-19 12:14:03,148 TransactionManager.java       [ 270] INFO  -             Speed    <232> records /sec
+2014-10-19 12:14:09,019 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:14:09,040 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:09,040 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:09,062 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <13> ms
+2014-10-19 12:14:09,066 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 12:14:09,066 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 12:14:09,066 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:14:09,067 TransactionManager.java       [ 268] INFO  -             Duration <26> ms
+2014-10-19 12:14:09,067 TransactionManager.java       [ 270] INFO  -             Speed    <384> records /sec
+2014-10-19 12:14:34,794 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:14:34,796 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:14:34,821 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:14:35,000 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:14:35,032 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:14:35,137 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995arui281cvocgf|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995arui281cvocgf|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:14:35,528 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:14:35,540 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:14:35,540 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:14:35,546 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:14:35,547 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:14:35,548 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:14:35,552 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:14:35,552 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:14:35,552 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:14:35,553 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:14:35,553 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:14:35,554 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 15ms.
+2014-10-19 12:14:35,558 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:14:35,563 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:14:35,563 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:14:35,565 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 12:14:50,607 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:14:50,633 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:50,633 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 12:14:50,689 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <17> ms
+2014-10-19 12:14:50,692 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 12:14:50,692 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 12:14:50,693 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:14:50,693 TransactionManager.java       [ 268] INFO  -             Duration <59> ms
+2014-10-19 12:14:50,693 TransactionManager.java       [ 270] INFO  -             Speed    <169> records /sec
+2014-10-19 12:15:05,720 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:15:05,742 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:15:05,742 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 12:15:05,762 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <13> ms
+2014-10-19 12:15:05,765 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 12:15:05,765 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 12:15:05,765 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:15:05,765 TransactionManager.java       [ 268] INFO  -             Duration <23> ms
+2014-10-19 12:15:05,765 TransactionManager.java       [ 270] INFO  -             Speed    <434> records /sec
+2014-10-19 12:15:45,830 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 12:15:45,849 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:15:45,849 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 12:15:45,886 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <22> ms
+2014-10-19 12:15:45,889 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 12:15:45,889 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 12:15:45,889 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 12:15:45,889 TransactionManager.java       [ 268] INFO  -             Duration <40> ms
+2014-10-19 12:15:45,890 TransactionManager.java       [ 270] INFO  -             Speed    <250> records /sec
+2014-10-19 12:58:32,123 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 12:58:32,125 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 12:58:32,149 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 12:58:32,336 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 12:58:32,372 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 12:58:32,488 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995atf11kest5y|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995atf11kest5y|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 12:58:32,908 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 12:58:32,911 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 12:58:32,914 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 12:58:32,915 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 12:58:32,918 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 12:58:32,918 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 12:58:32,921 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 12:58:32,921 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 12:58:32,921 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 12:58:32,921 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 12:58:32,922 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 12:58:32,922 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 12:58:32,924 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 12:58:32,929 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 12:58:32,929 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 12:58:32,930 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:10:42,778 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:10:42,780 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:10:42,804 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:10:42,988 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:10:43,017 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:10:43,115 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995atuothqgxrwa|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995atuothqgxrwa|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:10:43,504 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:10:43,507 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:10:43,511 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:10:43,511 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:10:43,514 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:10:43,515 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:10:43,518 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:10:43,518 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:10:43,518 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:10:43,519 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:10:43,519 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:10:43,519 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 13:10:43,522 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:10:43,528 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:10:43,528 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:10:43,529 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:10:53,566 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:10:53,592 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:10:53,592 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:10:53,660 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <28> ms
+2014-10-19 13:10:53,664 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:10:53,664 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:10:53,664 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:10:53,664 TransactionManager.java       [ 268] INFO  -             Duration <72> ms
+2014-10-19 13:10:53,664 TransactionManager.java       [ 270] INFO  -             Speed    <138> records /sec
+2014-10-19 13:11:28,692 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:11:28,716 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:11:28,716 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:11:28,733 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <7> ms
+2014-10-19 13:11:28,736 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 13:11:28,737 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 13:11:28,737 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:11:28,737 TransactionManager.java       [ 268] INFO  -             Duration <20> ms
+2014-10-19 13:11:28,737 TransactionManager.java       [ 270] INFO  -             Speed    <500> records /sec
+2014-10-19 13:11:58,786 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:11:58,804 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 13:11:58,806 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 13:11:58,875 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <58> ms
+2014-10-19 13:11:58,878 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 13:11:58,878 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 13:11:58,878 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:11:58,878 TransactionManager.java       [ 268] INFO  -             Duration <74> ms
+2014-10-19 13:11:58,879 TransactionManager.java       [ 270] INFO  -             Speed    <135> records /sec
+2014-10-19 13:12:18,878 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:12:18,897 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 13:12:18,897 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 13:12:18,945 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <33> ms
+2014-10-19 13:12:18,949 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-19 13:12:18,950 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-19 13:12:18,950 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:12:18,950 TransactionManager.java       [ 268] INFO  -             Duration <52> ms
+2014-10-19 13:12:18,950 TransactionManager.java       [ 270] INFO  -             Speed    <192> records /sec
+2014-10-19 13:12:39,006 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:12:39,009 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:12:39,043 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:12:39,253 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:12:39,290 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:12:39,400 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995atx6ikf1ixpt|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995atx6ikf1ixpt|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:12:39,799 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:12:39,802 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:12:39,805 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:12:39,806 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:12:39,809 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:12:39,809 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:12:39,812 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:12:39,812 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:12:39,813 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:12:39,813 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:12:39,813 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:12:39,813 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 13:12:39,816 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:12:39,822 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:12:39,822 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:12:39,823 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:12:39,852 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:12:39,873 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:12:39,873 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:12:39,925 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <28> ms
+2014-10-19 13:12:39,929 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:12:39,929 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:12:39,929 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:12:39,929 TransactionManager.java       [ 268] INFO  -             Duration <55> ms
+2014-10-19 13:12:39,929 TransactionManager.java       [ 270] INFO  -             Speed    <181> records /sec
+2014-10-19 13:16:18,283 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:16:18,285 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:16:18,307 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:16:18,486 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:16:18,518 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:16:18,619 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995au1vot3b6i1a|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995au1vot3b6i1a|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:16:19,018 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:16:19,021 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:16:19,024 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:16:19,025 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:16:19,028 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:16:19,028 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:16:19,031 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:16:19,031 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:16:19,031 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:16:19,032 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:16:19,032 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:16:19,032 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 13:16:19,035 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:16:19,040 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:16:19,040 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:16:19,041 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:16:39,099 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:16:39,116 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:16:39,116 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:16:39,179 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <29> ms
+2014-10-19 13:16:39,183 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:16:39,183 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:16:39,183 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:16:39,183 TransactionManager.java       [ 268] INFO  -             Duration <67> ms
+2014-10-19 13:16:39,183 TransactionManager.java       [ 270] INFO  -             Speed    <149> records /sec
+2014-10-19 13:17:05,405 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:17:05,407 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:17:05,435 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:17:05,650 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:17:05,688 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:17:05,789 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995au2w2616v3idt|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995au2w2616v3idt|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:17:06,332 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:17:06,336 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:17:06,340 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:17:06,340 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:17:06,344 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:17:06,344 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:17:06,348 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:17:06,348 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:17:06,348 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:17:06,349 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:17:06,349 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:17:06,350 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-19 13:17:06,353 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:17:06,360 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:17:06,360 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:17:06,361 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:17:11,400 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:17:11,449 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:17:11,449 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:17:11,513 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <17> ms
+2014-10-19 13:17:11,519 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:17:11,519 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:17:11,520 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:17:11,520 TransactionManager.java       [ 268] INFO  -             Duration <70> ms
+2014-10-19 13:17:11,520 TransactionManager.java       [ 270] INFO  -             Speed    <142> records /sec
+2014-10-19 13:19:50,854 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:19:50,857 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:19:50,886 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:19:51,080 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:19:51,113 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:19:51,247 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995au6fqidtrqsk|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995au6fqidtrqsk|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:19:51,797 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:19:51,800 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:19:51,803 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:19:51,803 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:19:51,806 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:19:51,807 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:19:51,810 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:19:51,810 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:19:51,810 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:19:51,810 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:19:51,811 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:19:51,811 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 13:19:51,814 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:19:51,819 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:19:51,820 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:19:51,821 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:19:56,853 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:19:56,901 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:19:56,902 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:19:56,957 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <20> ms
+2014-10-19 13:19:56,962 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:19:56,963 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:19:56,963 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:19:56,963 TransactionManager.java       [ 268] INFO  -             Duration <61> ms
+2014-10-19 13:19:56,963 TransactionManager.java       [ 270] INFO  -             Speed    <163> records /sec
+2014-10-19 13:20:16,985 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:20:17,008 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:20:17,008 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:20:17,030 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <12> ms
+2014-10-19 13:20:17,033 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 13:20:17,034 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 13:20:17,034 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:20:17,034 TransactionManager.java       [ 268] INFO  -             Duration <25> ms
+2014-10-19 13:20:17,034 TransactionManager.java       [ 270] INFO  -             Speed    <400> records /sec
+2014-10-19 13:21:31,725 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:21:31,727 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:21:31,752 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:21:31,952 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:21:31,987 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:21:32,089 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995au8lk7hxj083|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995au8lk7hxj083|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:21:32,560 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:21:32,564 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:21:32,568 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:21:32,568 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:21:32,572 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:21:32,573 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:21:32,576 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:21:32,577 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:21:32,577 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:21:32,578 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:21:32,578 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:21:32,578 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-19 13:21:32,582 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:21:32,590 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:21:32,590 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:21:32,591 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:21:37,627 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:21:37,665 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:21:37,666 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:21:37,735 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <39> ms
+2014-10-19 13:21:37,741 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:21:37,741 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:21:37,741 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:21:37,742 TransactionManager.java       [ 268] INFO  -             Duration <76> ms
+2014-10-19 13:21:37,742 TransactionManager.java       [ 270] INFO  -             Speed    <131> records /sec
+2014-10-19 13:21:46,618 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:21:46,644 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:21:46,644 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe>
+2014-10-19 13:21:46,674 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <20> ms
+2014-10-19 13:21:46,678 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-19 13:21:46,678 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-19 13:21:46,678 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:21:46,678 TransactionManager.java       [ 268] INFO  -             Duration <34> ms
+2014-10-19 13:21:46,678 TransactionManager.java       [ 270] INFO  -             Speed    <294> records /sec
+2014-10-19 13:22:41,708 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:22:41,731 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 13:22:41,732 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe>
+2014-10-19 13:22:41,775 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <32> ms
+2014-10-19 13:22:41,779 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-19 13:22:41,779 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-19 13:22:41,779 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:22:41,779 TransactionManager.java       [ 268] INFO  -             Duration <48> ms
+2014-10-19 13:22:41,779 TransactionManager.java       [ 270] INFO  -             Speed    <208> records /sec
+2014-10-19 13:22:48,564 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:22:48,583 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 13:22:48,584 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe>
+2014-10-19 13:22:48,603 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <15> ms
+2014-10-19 13:22:48,610 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-19 13:22:48,610 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-19 13:22:48,610 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:22:48,611 TransactionManager.java       [ 268] INFO  -             Duration <27> ms
+2014-10-19 13:22:48,611 TransactionManager.java       [ 270] INFO  -             Speed    <370> records /sec
+2014-10-19 13:24:23,225 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:24:23,227 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:24:23,251 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:24:23,434 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:24:23,470 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:24:23,574 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995auc9vt1dbt2ws|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995auc9vt1dbt2ws|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:24:23,929 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:24:23,934 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-19 13:24:23,935 ElcRate.java                  [ 705] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+ElcRate.exception.InitializationException: ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.
+	at ElcRate.configurationmanager.ElcRateSocket.<init>(ElcRateSocket.java:143)
+	at ElcRate.configurationmanager.EventHandler.init(EventHandler.java:164)
+	at ElcRate.ElcRate.loadResources(ElcRate.java:1232)
+	at ElcRate.ElcRate.startupFramework(ElcRate.java:611)
+	at ElcRate.ElcRate.createApplication(ElcRate.java:472)
+	at ElcRate.ElcRate.main(ElcRate.java:289)
+2014-10-19 13:24:23,938 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-19 13:24:23,938 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-19 13:24:27,963 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:24:27,965 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:24:27,990 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:24:28,175 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:24:28,211 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:24:28,319 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995aucdje14lhsph|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995aucdje14lhsph|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:24:28,677 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:24:28,680 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:24:28,683 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:24:28,683 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:24:28,686 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:24:28,687 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:24:28,690 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:24:28,691 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:24:28,691 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:24:28,691 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:24:28,692 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:24:28,692 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 13:24:28,696 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:24:28,701 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:24:28,702 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:24:28,703 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:24:33,738 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:24:33,777 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:24:33,777 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:24:33,837 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <37> ms
+2014-10-19 13:24:33,844 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:24:33,844 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:24:33,844 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:24:33,845 TransactionManager.java       [ 268] INFO  -             Duration <67> ms
+2014-10-19 13:24:33,845 TransactionManager.java       [ 270] INFO  -             Speed    <149> records /sec
+2014-10-19 13:26:44,815 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:26:44,817 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:26:44,837 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:26:45,016 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:26:45,051 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:26:45,209 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995aufb4j1tvkzsh|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995aufb4j1tvkzsh|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:26:45,948 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:26:45,955 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-19 13:26:45,955 ElcRate.java                  [ 705] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+ElcRate.exception.InitializationException: ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.
+	at ElcRate.configurationmanager.ElcRateSocket.<init>(ElcRateSocket.java:143)
+	at ElcRate.configurationmanager.EventHandler.init(EventHandler.java:164)
+	at ElcRate.ElcRate.loadResources(ElcRate.java:1232)
+	at ElcRate.ElcRate.startupFramework(ElcRate.java:611)
+	at ElcRate.ElcRate.createApplication(ElcRate.java:472)
+	at ElcRate.ElcRate.main(ElcRate.java:289)
+2014-10-19 13:26:45,958 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-19 13:26:45,959 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-19 13:57:46,018 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 13:57:46,020 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 13:57:46,042 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 13:57:46,227 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 13:57:46,260 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 13:57:46,366 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995avj78qcd4b9t|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995avj78qcd4b9t|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 13:57:46,790 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 13:57:46,793 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 13:57:46,796 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 13:57:46,797 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 13:57:46,800 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 13:57:46,800 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 13:57:46,803 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 13:57:46,804 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 13:57:46,804 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 13:57:46,804 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 13:57:46,804 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 13:57:46,805 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-19 13:57:46,807 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 13:57:46,812 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 13:57:46,812 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 13:57:46,813 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 13:58:01,855 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 13:58:01,892 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:58:01,893 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 13:58:01,966 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <48> ms
+2014-10-19 13:58:01,971 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 13:58:01,971 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 13:58:01,971 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 13:58:01,971 TransactionManager.java       [ 268] INFO  -             Duration <79> ms
+2014-10-19 13:58:01,971 TransactionManager.java       [ 270] INFO  -             Speed    <126> records /sec
+2014-10-19 14:52:58,178 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-19 14:52:58,180 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-19 14:52:58,202 MLog.java                     [  80] INFO  - MLog clients using log4j logging.
+2014-10-19 14:52:58,403 C3P0Registry.java             [ 204] INFO  - Initializing c3p0-0.9.1.2 [built 21-May-2007 15:04:56; debug? true; trace: 10]
+2014-10-19 14:52:58,443 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-19 14:52:58,566 AbstractPoolBackedDataSource.java[ 462] INFO  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 5000, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -> 1hge2e995axi6x41binkf4|2957fcb0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> oracle.jdbc.driver.OracleDriver, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hge2e995axi6x41binkf4|2957fcb0, idleConnectionTestPeriod -> 60, initialPoolSize -> 3, jdbcUrl -> jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE))), maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 5, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 25, maxStatementsPerConnection -> 25, minPoolSize -> 3, numHelperThreads -> 3, numThreadsAwaitingCheckoutDefaultUser -> 0, preferredTestQuery -> SELECT 1 FROM DUAL, properties -> {user=******, password=******}, propertyCycle -> 0, testConnectionOnCheckin -> true, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false ]
+2014-10-19 14:52:58,950 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-19 14:52:58,953 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-19 14:52:58,957 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-19 14:52:58,957 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-19 14:52:58,960 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-19 14:52:58,961 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-19 14:52:58,964 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-19 14:52:58,964 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-19 14:52:58,964 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-19 14:52:58,965 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-19 14:52:58,965 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-19 14:52:58,965 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-19 14:52:58,969 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-19 14:52:58,974 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-19 14:52:58,974 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-19 14:52:58,975 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-19 14:53:09,010 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
+2014-10-19 14:53:09,046 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 14:53:09,046 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-19 14:53:09,115 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <38> ms
+2014-10-19 14:53:09,120 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-19 14:53:09,120 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-19 14:53:09,121 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
+2014-10-19 14:53:09,121 TransactionManager.java       [ 268] INFO  -             Duration <74> ms
+2014-10-19 14:53:09,121 TransactionManager.java       [ 270] INFO  -             Speed    <135> records /sec

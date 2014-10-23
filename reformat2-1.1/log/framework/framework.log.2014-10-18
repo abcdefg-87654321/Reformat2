@@ -1,0 +1,672 @@
+2014-10-18 09:46:02,664 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 09:46:02,667 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 09:46:02,900 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 09:46:03,371 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 09:46:03,375 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 09:46:03,378 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 09:46:03,378 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 09:46:03,381 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 09:46:03,382 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 09:46:03,384 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 09:46:03,385 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 09:46:03,385 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 09:46:03,385 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 09:46:03,385 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 09:46:03,386 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 09:46:03,389 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 09:46:03,394 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 09:46:03,395 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 09:53:15,331 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 09:53:15,334 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 09:53:15,830 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 09:53:16,304 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 09:53:16,308 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 09:53:16,311 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 09:53:16,312 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 09:53:16,316 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 09:53:16,317 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 09:53:16,324 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 09:53:16,324 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 09:53:16,325 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 09:53:16,325 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 09:53:16,326 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 09:53:16,326 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 15ms.
+2014-10-18 09:53:16,330 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 09:53:16,339 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 09:53:16,341 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 09:56:31,287 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 09:56:31,291 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 09:56:31,620 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 09:56:32,167 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 09:56:32,171 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 09:56:32,174 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 09:56:32,174 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 09:56:32,178 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 09:56:32,179 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 09:56:32,182 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 09:56:32,183 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 09:56:32,183 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 09:56:32,183 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 09:56:32,183 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 09:56:32,184 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-18 09:56:32,187 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 09:56:32,194 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 09:56:32,196 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:01:48,134 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:01:48,137 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:01:48,399 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:01:49,018 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:01:49,021 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:01:49,026 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:01:49,026 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:01:49,030 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:01:49,031 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:01:49,035 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:01:49,035 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:01:49,035 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:01:49,035 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:01:49,036 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:01:49,036 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-18 10:01:49,040 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:01:49,046 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:01:49,047 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:16:41,476 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:16:41,480 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:16:41,748 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:16:42,241 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:16:42,245 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:16:42,248 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:16:42,249 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:16:42,252 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:16:42,252 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:16:42,255 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:16:42,255 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:16:42,256 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:16:42,256 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:16:42,256 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:16:42,256 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 10:16:42,259 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:16:42,264 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:16:42,265 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:17:38,406 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:17:38,409 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:17:38,652 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:17:39,135 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:17:39,138 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:17:39,141 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:17:39,142 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:17:39,145 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:17:39,145 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:17:39,148 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:17:39,148 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:17:39,148 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:17:39,149 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:17:39,149 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:17:39,149 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 10:17:39,152 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:17:39,159 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:17:39,160 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:19:32,719 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:19:32,721 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:19:32,971 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:19:33,471 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:19:33,475 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:19:33,478 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:19:33,479 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:19:33,482 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:19:33,483 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:19:33,485 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:19:33,486 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:19:33,486 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:19:33,486 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:19:33,486 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:19:33,486 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 10:19:33,491 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:19:33,496 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:19:33,498 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:21:00,023 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:21:00,026 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:21:00,292 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:21:00,820 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:21:00,824 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:21:00,828 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:21:00,829 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:21:00,833 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:21:00,833 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:21:00,836 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:21:00,836 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:21:00,837 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:21:00,837 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:21:00,837 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:21:00,837 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 10:21:00,841 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:21:00,847 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:21:00,849 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:26:23,121 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:26:23,124 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:26:23,376 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:26:23,976 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:26:23,981 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 10:26:23,986 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 10:26:23,986 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 10:26:28,883 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:26:28,885 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:26:29,124 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:26:29,596 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:26:29,599 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:26:29,603 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:26:29,603 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:26:29,606 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:26:29,607 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:26:29,610 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:26:29,610 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:26:29,610 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:26:29,610 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:26:29,611 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:26:29,611 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 10:26:29,614 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:26:29,618 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:26:29,620 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:30:28,541 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:30:28,544 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:30:28,808 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:30:29,335 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:30:29,340 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:30:29,344 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:30:29,345 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:30:29,349 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:30:29,349 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:30:29,352 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:30:29,352 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:30:29,353 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:30:29,353 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:30:29,353 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:30:29,353 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 10:30:29,356 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:30:29,363 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:30:29,365 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:39:54,956 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:39:54,959 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:39:55,236 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:39:55,678 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:39:55,682 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 10:39:55,685 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 10:39:55,685 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 10:39:59,197 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:39:59,200 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:39:59,447 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:39:59,923 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:39:59,926 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:39:59,929 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:39:59,929 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:39:59,932 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:39:59,933 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:39:59,936 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:39:59,936 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:39:59,936 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:39:59,937 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:39:59,937 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:39:59,937 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 10:39:59,940 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:39:59,944 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:39:59,945 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:40:41,343 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:40:41,345 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:40:41,609 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:40:42,153 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:40:42,157 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:40:42,160 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:40:42,161 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:40:42,163 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:40:42,164 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:40:42,167 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:40:42,167 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:40:42,168 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:40:42,168 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:40:42,169 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:40:42,169 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 10:40:42,172 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:40:42,178 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:40:42,179 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 10:41:36,543 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 10:41:36,545 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 10:41:36,789 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 10:41:37,280 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 10:41:37,284 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 10:41:37,287 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 10:41:37,288 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 10:41:37,291 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 10:41:37,292 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 10:41:37,295 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 10:41:37,295 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 10:41:37,295 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 10:41:37,296 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 10:41:37,296 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 10:41:37,296 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 10:41:37,302 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 10:41:37,310 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 10:41:37,312 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 15:00:38,586 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 15:00:38,589 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 15:00:38,927 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 15:00:39,372 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 15:00:39,376 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 15:00:39,379 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 15:00:39,380 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 15:00:39,385 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 15:00:39,385 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 15:00:39,388 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 15:00:39,388 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 15:00:39,388 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 15:00:39,389 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 15:00:39,389 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 15:00:39,389 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-18 15:00:39,392 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 15:00:39,397 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 15:00:39,399 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 15:01:27,919 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 15:01:27,921 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 15:01:28,183 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 15:01:28,657 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 15:01:28,660 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 15:01:28,663 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 15:01:28,663 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 15:01:28,666 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 15:01:28,667 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 15:01:28,670 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 15:01:28,670 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 15:01:28,670 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 15:01:28,670 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 15:01:28,671 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 15:01:28,671 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 15:01:28,674 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 15:01:28,678 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 15:01:28,680 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 15:04:59,101 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 15:04:59,103 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 15:04:59,364 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 15:04:59,857 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 15:04:59,862 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 15:04:59,865 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 15:04:59,865 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 15:04:59,870 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 15:04:59,871 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 15:04:59,875 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 15:04:59,875 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 15:04:59,876 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 15:04:59,876 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 15:04:59,877 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 15:04:59,877 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 12ms.
+2014-10-18 15:04:59,882 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 15:04:59,886 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 15:04:59,888 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 15:09:01,250 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 15:09:01,252 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 15:09:01,710 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 15:09:02,171 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 15:09:02,174 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 15:09:02,177 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 15:09:02,178 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 15:09:02,181 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 15:09:02,182 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 15:09:02,184 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 15:09:02,184 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 15:09:02,185 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 15:09:02,185 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 15:09:02,185 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 15:09:02,185 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 15:09:02,188 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 15:09:02,193 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 15:09:02,194 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 17:18:24,033 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 17:18:24,035 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 17:18:24,318 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 17:18:24,957 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 17:18:24,960 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 17:18:24,964 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 17:18:24,964 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 17:18:24,967 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 17:18:24,968 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 17:18:24,972 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 17:18:24,972 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 17:18:24,972 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 17:18:24,973 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 17:18:24,973 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 17:18:24,973 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 17:18:24,978 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 17:18:24,983 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 17:18:24,985 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 17:20:09,210 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 17:20:09,212 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 17:20:09,457 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 17:20:09,943 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 17:20:09,946 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 17:20:09,949 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 17:20:09,949 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 17:20:09,952 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 17:20:09,953 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 17:20:09,956 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 17:20:09,956 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 17:20:09,956 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 17:20:09,957 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 17:20:09,957 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 17:20:09,957 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 17:20:09,961 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 17:20:09,965 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 17:20:09,967 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 17:21:50,360 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 17:21:50,362 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 17:21:50,848 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 17:21:51,305 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 17:21:51,308 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 17:21:51,312 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 17:21:51,312 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 17:21:51,315 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 17:21:51,316 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 17:21:51,318 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 17:21:51,319 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 17:21:51,319 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 17:21:51,319 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 17:21:51,319 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 17:21:51,320 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 17:21:51,323 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 17:21:51,328 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 17:21:51,329 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 17:41:26,088 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 17:41:26,091 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 17:41:26,352 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 17:41:26,895 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 17:41:26,899 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 17:41:26,903 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 17:41:26,904 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 17:41:26,907 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 17:41:26,908 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 17:41:26,911 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 17:41:26,911 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 17:41:26,912 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 17:41:26,912 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 17:41:26,913 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 17:41:26,913 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 10ms.
+2014-10-18 17:41:26,917 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 17:41:26,925 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 17:41:26,937 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:04:35,172 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:04:35,175 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:04:35,432 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:04:35,999 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:04:36,005 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 18:04:36,012 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 18:04:36,012 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 18:04:39,536 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:04:39,538 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:04:39,789 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:04:40,293 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:04:40,296 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:04:40,300 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:04:40,300 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:04:40,303 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:04:40,304 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:04:40,306 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:04:40,307 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:04:40,307 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:04:40,307 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:04:40,307 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:04:40,308 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 7ms.
+2014-10-18 18:04:40,310 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:04:40,315 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:04:40,317 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:16:52,165 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:16:52,167 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:16:52,410 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:16:52,940 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:16:52,943 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:16:52,946 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:16:52,947 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:16:52,950 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:16:52,951 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:16:52,953 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:16:52,954 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:16:52,954 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:16:52,954 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:16:52,954 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:16:52,955 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:16:52,957 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:16:52,963 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:16:52,964 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:18:36,343 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:18:36,346 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:18:36,606 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:18:37,089 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:18:37,093 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:18:37,096 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:18:37,097 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:18:37,100 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:18:37,100 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:18:37,103 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:18:37,103 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:18:37,104 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:18:37,104 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:18:37,104 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:18:37,104 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 18:18:37,108 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:18:37,113 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:18:37,114 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:20:05,598 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:20:05,601 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:20:05,905 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:20:06,493 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:20:06,496 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:20:06,499 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:20:06,500 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:20:06,503 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:20:06,504 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:20:06,506 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:20:06,507 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:20:06,507 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:20:06,507 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:20:06,508 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:20:06,508 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:20:06,511 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:20:06,517 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:20:06,518 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:24:51,663 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:24:51,666 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:24:51,924 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:24:52,509 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:24:52,513 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:24:52,517 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:24:52,518 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:24:52,522 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:24:52,522 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:24:52,525 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:24:52,525 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:24:52,526 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:24:52,526 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:24:52,526 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:24:52,526 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:24:52,529 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:24:52,536 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:24:52,537 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:29:53,152 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:29:53,154 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:29:53,448 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:29:53,947 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:29:53,950 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:29:53,954 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:29:53,954 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:29:53,957 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:29:53,958 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:29:53,961 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:29:53,962 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:29:53,962 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:29:53,962 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:29:53,963 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:29:53,963 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:29:53,966 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:29:53,971 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:29:53,973 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:44:44,147 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:44:44,149 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:44:44,404 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:44:44,929 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:44:44,933 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 18:44:44,937 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 18:44:44,937 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 18:44:48,540 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:44:48,542 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:44:48,779 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:44:49,254 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:44:49,257 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:44:49,260 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:44:49,261 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:44:49,264 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:44:49,264 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:44:49,267 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:44:49,267 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:44:49,268 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:44:49,268 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:44:49,268 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:44:49,269 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:44:49,271 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:44:49,276 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:44:49,277 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:47:01,937 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:47:01,939 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:47:02,207 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:47:02,804 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:47:02,821 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:47:02,822 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:47:02,828 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:47:02,829 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:47:02,831 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:47:02,834 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:47:02,834 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:47:02,834 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:47:02,835 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:47:02,835 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:47:02,836 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 15ms.
+2014-10-18 18:47:02,840 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:47:02,848 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:47:02,850 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:47:43,750 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:47:43,752 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:47:44,018 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:47:44,495 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:47:44,500 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:47:44,503 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:47:44,504 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:47:44,507 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:47:44,508 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:47:44,510 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:47:44,511 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:47:44,511 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:47:44,511 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:47:44,512 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:47:44,512 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 9ms.
+2014-10-18 18:47:44,515 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:47:44,520 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:47:44,521 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:48:48,713 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:48:48,715 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:48:48,965 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:48:49,517 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:48:49,521 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:48:49,525 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:48:49,525 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:48:49,528 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:48:49,529 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:48:49,532 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:48:49,532 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:48:49,532 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:48:49,533 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:48:49,533 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:48:49,533 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 18:48:49,536 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:48:49,542 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:48:49,543 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:51:30,059 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:51:30,061 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:51:30,352 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:51:30,817 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:51:30,820 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:51:30,823 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:51:30,824 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:51:30,827 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:51:30,827 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:51:30,830 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:51:30,830 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:51:30,831 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:51:30,831 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:51:30,831 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:51:30,831 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 18:51:30,834 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:51:30,839 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:51:30,840 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:53:00,141 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:53:00,143 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:53:00,419 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:53:00,947 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:53:00,953 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:53:00,955 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:53:00,956 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:53:00,960 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:53:00,960 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:53:00,964 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:53:00,964 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:53:00,964 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:53:00,965 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:53:00,965 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:53:00,966 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 11ms.
+2014-10-18 18:53:00,969 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:53:00,976 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:53:00,977 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:56:15,601 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:56:15,603 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:56:15,851 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:56:16,433 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:56:16,439 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 18:56:16,443 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 18:56:16,444 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 18:56:22,043 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:56:22,045 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:56:22,298 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:56:22,786 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:56:22,790 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:56:22,794 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:56:22,794 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:56:22,797 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:56:22,798 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:56:22,801 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:56:22,801 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:56:22,801 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:56:22,802 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:56:22,802 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:56:22,802 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 8ms.
+2014-10-18 18:56:22,805 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:56:22,810 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:56:22,811 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-18 18:58:34,977 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:58:34,980 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:58:35,223 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:58:35,713 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:58:35,717 ElcRate.java                  [ 655] ERROR - Exception thrown in module <Framework>
+2014-10-18 18:58:35,720 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <ElcRateSocket.getServerSocket(): Could not listen on port <8086>. Message = <Address already in use: JVM_Bind>. Aborting.>
+2014-10-18 18:58:35,720 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-18 18:58:39,200 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-18 18:58:39,202 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-18 18:58:39,453 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-18 18:58:39,955 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-18 18:58:39,961 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-18 18:58:39,968 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-18 18:58:39,969 CacheFactory.java             [ 222] INFO  - Loading Cacheable Class <PrefixCache>...
+2014-10-18 18:58:39,974 AbstractSyncLoaderCache.java  [ 214] INFO  - Starting cache loading for <PrefixCache>
+2014-10-18 18:58:39,975 BestMatchCache.java           [ 156] INFO  - Starting Best Match Cache Loading from File for cache <PrefixCache>
+2014-10-18 18:58:39,981 BestMatchCache.java           [ 257] INFO  - Best Match Data Loading completed. <247> configuration lines loaded for <PrefixCache > from <configData/prefixdesc.dat>
+2014-10-18 18:58:39,981 BestMatchCache.java           [ 261] INFO  - Loaded <3> base fields and <0> additional data fields
+2014-10-18 18:58:39,981 CacheFactory.java             [ 246] INFO  - Loaded  Cacheable Class <PrefixCache>...
+2014-10-18 18:58:39,982 CacheFactory.java             [ 411] INFO  - Cache <PrefixCache> is set to auto reload with a period of <0>
+2014-10-18 18:58:39,982 CacheFactory.java             [ 431] INFO  - Created Cacheable Class <PrefixCache>
+2014-10-18 18:58:39,983 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 15ms.
+2014-10-18 18:58:39,988 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-18 18:58:39,997 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-18 18:58:39,999 TransactionManager.java       [ 206] INFO  - TransactionManager initialised

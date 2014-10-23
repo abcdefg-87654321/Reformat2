@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!--
+maxTime in hour
+maxSize in MB
+-->
+<config>
+	<maxTime>2</maxTime>
+	<maxRecord>3</maxRecord>
+	<maxSize>2</maxSize>
+</config>

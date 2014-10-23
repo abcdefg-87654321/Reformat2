@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<config>
+	<!-- simplest possible processing pipeline -->
+	<Application>
+		Reformat2
+	</Application>
+
+	<PipelineList>
+		<Reformat2Pipe>
+			<Active>True</Active>
+			<HaltOnException>True</HaltOnException>
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe>
+	</PipelineList>
+
+	<!-- this configuration tells OpenRate to only audit core classes, which 
+		means that CVS version information does not need to be put into the application 
+		classes -->
+	<OnlyAuditCoreClasses>
+		True
+	</OnlyAuditCoreClasses>
+
+	<Reformat2Pipe>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR
+					 WHERE    DATA_PART = 0
+						   OR DATA_PART = 1
+						   OR DATA_PART = 2
+						   OR DATA_PART = 3
+						   OR DATA_PART = 4
+						   OR DATA_PART = 5
+						   OR DATA_PART = 6
+						   OR DATA_PART = 7
+						   OR DATA_PART = 8
+						   OR DATA_PART = 9
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR
+					 WHERE     (   DATA_PART = 0
+								OR DATA_PART = 1
+								OR DATA_PART = 2
+								OR DATA_PART = 3
+								OR DATA_PART = 4
+								OR DATA_PART = 5
+								OR DATA_PART = 6
+								OR DATA_PART = 7
+								OR DATA_PART = 8
+								OR DATA_PART = 9)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 0
+								OR DATA_PART = 1
+								OR DATA_PART = 2
+								OR DATA_PART = 3
+								OR DATA_PART = 4
+								OR DATA_PART = 5
+								OR DATA_PART = 6
+								OR DATA_PART = 7
+								OR DATA_PART = 8
+								OR DATA_PART = 9)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR
+											  WHERE     (   DATA_PART = 0
+														 OR DATA_PART = 1
+														 OR DATA_PART = 2
+														 OR DATA_PART = 3
+														 OR DATA_PART = 4
+														 OR DATA_PART = 5
+														 OR DATA_PART = 6
+														 OR DATA_PART = 7
+														 OR DATA_PART = 8
+														 OR DATA_PART = 9)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR
+					   WHERE     (   DATA_PART = 0
+								  OR DATA_PART = 1
+								  OR DATA_PART = 2
+								  OR DATA_PART = 3
+								  OR DATA_PART = 4
+								  OR DATA_PART = 5
+								  OR DATA_PART = 6
+								  OR DATA_PART = 7
+								  OR DATA_PART = 8
+								  OR DATA_PART = 9)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 0
+								OR DATA_PART = 1
+								OR DATA_PART = 2
+								OR DATA_PART = 3
+								OR DATA_PART = 4
+								OR DATA_PART = 5
+								OR DATA_PART = 6
+								OR DATA_PART = 7
+								OR DATA_PART = 8
+								OR DATA_PART = 9)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 0
+								OR DATA_PART = 1
+								OR DATA_PART = 2
+								OR DATA_PART = 3
+								OR DATA_PART = 4
+								OR DATA_PART = 5
+								OR DATA_PART = 6
+								OR DATA_PART = 7
+								OR DATA_PART = 8
+								OR DATA_PART = 9)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>testpipeline</OutputFilePrefix>
+				<OutputFileSuffix>.out</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>testpipeline</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+<!-- 			<NullOutput> -->
+<!-- 				<Active>true</Active> -->
+<!-- 				<OutputName>NullOutput</OutputName> -->
+<!-- 				<ClassName>ElcRate.adapter.NullOutputAdapter</ClassName> -->
+<!-- 				<BatchSize>5000</BatchSize> -->
+<!-- 			</NullOutput> -->
+		</OutputAdapter>
+	</Reformat2Pipe>
+
+	<Resource>
+		<DataSourceFactory>
+			<ClassName>ElcRate.resource.DataSourceFactory</ClassName>
+			<DataSourceBuilder>
+				<ClassName>ElcRate.db.C3P0DataSource</ClassName>
+			</DataSourceBuilder>
+			<DataSource>
+				<eOneRateDB>
+					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))</db_url>
+<!-- 					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))</db_url> -->
+					<driver>oracle.jdbc.driver.OracleDriver</driver>
+					<username>vnp_common</username>
+					<password>vnp_common</password>
+					<ValidationQuery>SELECT 1 FROM DUAL</ValidationQuery>
+					<InitQuery>SELECT 1 FROM DUAL</InitQuery>
+					<TestConnectionPeriod>60</TestConnectionPeriod>
+				</eOneRateDB>
+			</DataSource>
+		</DataSourceFactory>
+	
+		<LogFactory>
+			<ClassName>ElcRate.logging.LogFactory</ClassName>
+			<Properties>log.properties</Properties>
+			<DefaultCategory>Reformat2Pipe</DefaultCategory>
+		</LogFactory>
+
+		<ECI>
+			<ClassName>ElcRate.configurationmanager.EventHandler</ClassName>
+			<Port>8086</Port>
+			<MaxConnection>2</MaxConnection>
+		</ECI>
+
+		<TransactionManagerFactory>
+			<ClassName>ElcRate.transaction.TransactionManagerFactory</ClassName>
+		</TransactionManagerFactory>
+
+		<CacheFactory>
+			<ClassName>ElcRate.resource.CacheFactory</ClassName>
+			<CacheableClass>
+				<PrefixCache>
+					<ClassName>ElcRate.cache.BestMatchCache</ClassName>
+					<DataSourceType>File</DataSourceType>
+					<DataFile>configData/prefixdesc.dat</DataFile>
+				</PrefixCache>
+			</CacheableClass>
+		</CacheFactory>
+	</Resource>
+</config>
