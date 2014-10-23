@@ -50,30 +50,66 @@
  */
 package eonerate.reformat2.data;
 
-import ElcRate.adapter.file.FlatFileOutputAdapter;
-import ElcRate.record.FlatRecord;
-import ElcRate.record.IRecord;
-
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+
+import ElcRate.adapter.file.FlatFileOutputAdapter;
+import ElcRate.record.FlatRecord;
+import ElcRate.record.IRecord;
 import eonerate.reformat2.entity.RateRecord;
-import ElcRate.adapter.file.FlatFileMultiStreamOutputAdapter;
 
 /**
  * The Output Adapter is reponsible for writing the completed records to the
  * target file.
  */
-public  class FileOutputAdapter 
+public class FileOutputAdapter extends FlatFileOutputAdapter {
 
-extends FlatFileOutputAdapter
-{
+	private void readConfig() {
+		// Check size, time, number of records
+		//		maxSize in MB
+		//		maxTime in hour
+		//		maxRecord
+
+		String filePath = "config/constraints.xml";
+		try {
+
+			File fXmlFile = new File(filePath);
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document doc = dBuilder.parse(fXmlFile);
+
+			//optional, but recommended
+			//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+			doc.getDocumentElement().normalize();
+
+			NodeList nList1 = doc.getElementsByTagName("maxTime");
+			NodeList nList2 = doc.getElementsByTagName("maxRecord");
+			NodeList nList3 = doc.getElementsByTagName("maxSize");
+
+			super.maxTime = Double.parseDouble(nList1.item(0).getTextContent());
+			super.maxRecord = Long.parseLong(nList2.item(0).getTextContent());
+			super.maxSize = Double.parseDouble(nList3.item(0).getTextContent());
+
+		} catch (Exception ex) {
+			System.err.println("Couldn't read " + filePath + " config");
+			System.exit(1);
+		}
+	}
 
 	/**
 	 * Constructor for SimpleOutputAdapter.
 	 */
 	public FileOutputAdapter() {
 		super();
+
+		readConfig();
 	}
 
 	/**
@@ -90,8 +126,8 @@ extends FlatFileOutputAdapter
 	 * adapter.
 	 */
 	@Override
-	public Collection<IRecord> procValidRecord(IRecord r) 
-	
+	public Collection<IRecord> procValidRecord(IRecord r)
+
 	{
 		FlatRecord tmpOutRecord;
 		RateRecord tmpInRecord;
@@ -102,19 +138,13 @@ extends FlatFileOutputAdapter
 		tmpOutRecord = new FlatRecord();
 		tmpInRecord = (RateRecord) r;
 		tmpOutRecord.setData(tmpInRecord.unmapOriginalData());
-		
-		   
-    
+
 		Outbatch.add((IRecord) tmpOutRecord);
-		 
-		
+
 		//System.out.println(Outbatch.size());
-		
-		
-		
-		
+
 		return Outbatch;
-		
+
 	}
 
 	/**
@@ -126,12 +156,10 @@ extends FlatFileOutputAdapter
 	public Collection<IRecord> procErrorRecord(IRecord r) {
 		return null;
 	}
-	
 
-
-//	@Override
-//	protected int getValidRecordStreamNumber(IRecord OutRec) {
-//		// TODO Auto-generated method stub
-//		return 2;
-//	}
+	//	@Override
+	//	protected int getValidRecordStreamNumber(IRecord OutRec) {
+	//		// TODO Auto-generated method stub
+	//		return 2;
+	//	}
 }

@@ -62,3 +62,91 @@ ElcRate.exception.InitializationException: ElcRateSocket.getServerSocket(): Coul
 	at ElcRate.ElcRate.startupFramework(ElcRate.java:611)
 	at ElcRate.ElcRate.createApplication(ElcRate.java:472)
 	at ElcRate.ElcRate.main(ElcRate.java:289)
+2014-10-23 16:23:02,915 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: Count SQL Exception in <DBInpAdapter>. message = <IO Error: Socket read timed out>
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.getInputAvailable(JDBCInputAdapter.java:1148)
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.loadBatch(JDBCInputAdapter.java:321)
+	at ElcRate.adapter.AbstractInputAdapter.push(AbstractInputAdapter.java:193)
+	at ElcRate.Pipeline.run(Pipeline.java:918)
+	at java.lang.Thread.run(Unknown Source)
+2014-10-23 16:23:02,915 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: Count SQL Exception in <DBInpAdapter>. message = <IO Error: Unrecognized Windows Sockets error: 0: recv failed>
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.getInputAvailable(JDBCInputAdapter.java:1148)
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.loadBatch(JDBCInputAdapter.java:321)
+	at ElcRate.adapter.AbstractInputAdapter.push(AbstractInputAdapter.java:193)
+	at ElcRate.Pipeline.run(Pipeline.java:918)
+	at java.lang.Thread.run(Unknown Source)
+2014-10-23 16:23:02,915 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: Count SQL Exception in <DBInpAdapter>. message = <IO Error: Socket read timed out>
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.getInputAvailable(JDBCInputAdapter.java:1148)
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.loadBatch(JDBCInputAdapter.java:321)
+	at ElcRate.adapter.AbstractInputAdapter.push(AbstractInputAdapter.java:193)
+	at ElcRate.Pipeline.run(Pipeline.java:918)
+	at java.lang.Thread.run(Unknown Source)
+2014-10-23 16:23:02,916 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: Count SQL Exception in <DBInpAdapter>. message = <IO Error: Unrecognized Windows Sockets error: 0: recv failed>
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.getInputAvailable(JDBCInputAdapter.java:1148)
+	at ElcRate.adapter.jdbc.JDBCInputAdapter.loadBatch(JDBCInputAdapter.java:321)
+	at ElcRate.adapter.AbstractInputAdapter.push(AbstractInputAdapter.java:193)
+	at ElcRate.Pipeline.run(Pipeline.java:918)
+	at java.lang.Thread.run(Unknown Source)
+2014-10-23 16:39:44,896 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more
+2014-10-23 16:39:51,319 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more
+2014-10-23 16:39:56,038 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more
+2014-10-23 17:10:11,133 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more
+2014-10-23 17:12:46,375 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more
+2014-10-23 17:12:59,701 ERROR - Processing Exception caught.
+ElcRate.exception.ProcessingException: java.lang.NullPointerException
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:496)
+	at ElcRate.adapter.AbstractOutputAdapter.write(AbstractOutputAdapter.java:288)
+	at ElcRate.adapter.AbstractOutputAdapter.run(AbstractOutputAdapter.java:191)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.prepValidRecord(FlatFileOutputAdapter.java:470)
+	... 3 more

@@ -55,21 +55,8 @@
 
 package ElcRate.adapter.file;
 
-import ElcRate.CommonConfig;
-import ElcRate.adapter.AbstractTransactionalOutputAdapter;
-import ElcRate.configurationmanager.ClientManager;
-import ElcRate.configurationmanager.IEventInterface;
-import ElcRate.exception.InitializationException;
-import ElcRate.exception.ProcessingException;
-import ElcRate.logging.LogUtil;
-import ElcRate.record.FlatRecord;
-import ElcRate.record.HeaderRecord;
-import ElcRate.record.IRecord;
-import ElcRate.utils.PropertyUtils;
-
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
@@ -93,6 +80,19 @@ import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import ElcRate.CommonConfig;
+import ElcRate.adapter.AbstractTransactionalOutputAdapter;
+import ElcRate.configurationmanager.ClientManager;
+import ElcRate.configurationmanager.IEventInterface;
+import ElcRate.exception.InitializationException;
+import ElcRate.exception.ProcessingException;
+import ElcRate.logging.ILogger;
+import ElcRate.logging.LogUtil;
+import ElcRate.record.FlatRecord;
+import ElcRate.record.HeaderRecord;
+import ElcRate.record.IRecord;
+import ElcRate.utils.PropertyUtils;
+
 /**
  * Please <a target='new' href=
  * 'http://www.open-rate.com/wiki/index.php?title=Flat_File_Output_Adapter'>click
@@ -102,6 +102,9 @@ import org.xml.sax.SAXException;
  */
 public abstract class FlatFileOutputAdapter extends
 		AbstractTransactionalOutputAdapter implements IEventInterface {
+
+	ILogger LOG_PROCESSING = LogUtil.getLogUtil().getLogger("Processing");
+
 	// The buffer size is the size of the buffer in the buffered reader
 	private static final int BUF_SIZE = 65536;
 
@@ -148,20 +151,20 @@ public abstract class FlatFileOutputAdapter extends
 	// final static String SERVICE_OUT_FILE_NAME = "outputFileName";
 	// final static String SERVICE_ERR_FILE_NAME = "ErrFileName";
 	private String proOutputFileName = null;
-	private String outputFileName=null;
+	private String outputFileName = null;
 	static boolean writeToNew = true;
 	static long timeBegin, timeEnd, timeInterval;
 	static long numRecord = 0;
-	static boolean doing=false;
+	static boolean doing = false;
 
 	static long fileSequence = 1;
 	static long startSequenceCDR = 1;
 	static long endSequenceCDR = 1;
 	static long recordCount = 1;
 
-	static double maxSize = 4; // in MB
-	static long maxRecord = 10;
-	static double maxTime = 2; // in hour
+	protected double maxSize = 4; // in MB
+	protected long maxRecord = 10;
+	protected double maxTime = 2; // in hour
 
 	// This is used to hold the calculated file names
 	public class TransControlStructure {
@@ -283,9 +286,7 @@ public abstract class FlatFileOutputAdapter extends
 		// transaction
 		// information for the transaction we are processing
 
-		if (!outputStreamOpen)
-
-		{
+		if (!outputStreamOpen) {
 
 			fileBaseName = tmpHeader.getStreamName();
 			tmpTransNumber = tmpHeader.getTransactionNumber();
@@ -294,9 +295,9 @@ public abstract class FlatFileOutputAdapter extends
 			tmpFileNames.procoutputFileName = filePath
 					+ System.getProperty("file.separator") + processingPrefix
 					+ filePrefix + fileBaseName + fileSuffix;
-			 tmpFileNames.outputFileName = filePath
-			 + System.getProperty("file.separator") + filePrefix
-			 + fileBaseName + fileSuffix;
+			tmpFileNames.outputFileName = filePath
+					+ System.getProperty("file.separator") + filePrefix
+					+ fileBaseName + fileSuffix;
 			// tmpFileNames.outputFileName = filePath +
 			// System.getProperty("file.separator") +
 			// filePrefix + sequence+"."+ fileBaseName + fileSuffix;
@@ -323,6 +324,10 @@ public abstract class FlatFileOutputAdapter extends
 		return r;
 	}
 
+	private String getSeqFilePath() {
+		return "config/" + filePrefix + "sequence.txt";
+	}
+
 	/**
 	 * Write good records to the defined output stream. This method performs
 	 * record expansion (the opposite of record compression) and then calls the
@@ -347,10 +352,9 @@ public abstract class FlatFileOutputAdapter extends
 			writeToNew = false;
 
 			try {
-				File source = new File("config/sequence.txt");
+				File source = new File(getSeqFilePath());
 				if (!source.exists()) {
-					PrintWriter out = new PrintWriter(new FileOutputStream(
-							"config/sequence.txt"));
+					PrintWriter out = new PrintWriter(new FileOutputStream(getSeqFilePath()));
 					out.println(1);
 					out.println(1);
 					out.flush();
@@ -367,22 +371,16 @@ public abstract class FlatFileOutputAdapter extends
 			}
 			//System.out.println(fileSequence);
 
-			proOutputFileName = filePath + System.getProperty("file.separator")
-					+ "IPor." + (System.currentTimeMillis() / 1000)+ ".slu999." + df.format(fileSequence) + ".bill.doing"
-					;
-			outputFileName=filePath + System.getProperty("file.separator")
-					+ "IPor." + (System.currentTimeMillis() / 1000)+ ".slu999." + df.format(fileSequence) + ".bill"
-					;
-			
+			outputFileName = filePath + System.getProperty("file.separator") + "IPor." + (System.currentTimeMillis() / 1000) + ".slu999." + df.format(fileSequence) + ".bill";
+			proOutputFileName = outputFileName + ".doing";
+
 			File directory = new File(filePath);
 
-		    // get all the files from a directory
+			// get all the files from a directory
 			File[] fList = directory.listFiles();
-			for (File file : fList)
-
-			{
+			for (File file : fList) {
 				String str = file.getAbsolutePath();
-			
+
 				int index = str.indexOf("doing");
 				if (index > 1) {
 					proOutputFileName = str;
@@ -401,8 +399,8 @@ public abstract class FlatFileOutputAdapter extends
 						numRecord = linenumber;
 						lnr.close();
 						//System.out.println(file.getName());
-						String timeInString=file.getName().substring(5, 15);
-						timeBegin=Long.parseLong(timeInString);
+						String timeInString = file.getName().substring(5, 15);
+						timeBegin = Long.parseLong(timeInString);
 						//System.out.println(timeInString);
 
 					} catch (FileNotFoundException e) {
@@ -417,14 +415,9 @@ public abstract class FlatFileOutputAdapter extends
 				}
 
 			}
-			
-			
-			
-			
-		    // put the header for the file
-			if (!doing)
-			{
 
+			// put the header for the file
+			if (!doing) {
 				timeBegin = System.currentTimeMillis() / 1000;
 				// append the header of the file to StringBuilder
 				StringBuilder fileHeader = new StringBuilder(1024);
@@ -437,31 +430,30 @@ public abstract class FlatFileOutputAdapter extends
 				fileHeader.append("ORH");
 				fileHeader.append("\0");
 				fileHeader.append(hostName);
-				for (int i = 0; i < 33-hostName.length(); i++) {
+				for (int i = 0; i < 33 - hostName.length(); i++) {
 					fileHeader.append("\0");
 				}
 
 				df = new DecimalFormat("0000000000");
 
-				fileHeader.append(df.format(startSequenceCDR)+"\0");
-				fileHeader.append(df.format(startSequenceCDR)+"\0");
-				fileHeader.append(df.format(timeBegin)+"\0");
-				fileHeader.append(df.format(timeBegin)+"\0");
-				fileHeader.append(df.format(recordCount) +"\0");
-				
-			try {
-				File file = new File(proOutputFileName);
-				FileWriter fwriter = new FileWriter(file, true);
-				validWriter = new BufferedWriter(fwriter, BUF_SIZE);
-				validWriter.write(fileHeader.toString());
-				validWriter.flush();
-				validWriter.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				fileHeader.append(df.format(startSequenceCDR) + "\0");
+				fileHeader.append(df.format(startSequenceCDR) + "\0");
+				fileHeader.append(df.format(timeBegin) + "\0");
+				fileHeader.append(df.format(timeBegin) + "\0");
+				fileHeader.append(df.format(recordCount) + "\0");
+
+				try {
+					File file = new File(proOutputFileName);
+					FileWriter fwriter = new FileWriter(file, true);
+					validWriter = new BufferedWriter(fwriter, BUF_SIZE);
+					validWriter.write(fileHeader.toString());
+					validWriter.flush();
+					validWriter.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-			}
-			
 
 		}
 
@@ -473,23 +465,23 @@ public abstract class FlatFileOutputAdapter extends
 			while (outRecIter.hasNext()) {
 				outRec = (FlatRecord) outRecIter.next();
 				try {
-					
 
 					// write the record to file
 					File file = new File(proOutputFileName);
 					FileWriter fwriter = new FileWriter(file, true);
 					validWriter = new BufferedWriter(fwriter, BUF_SIZE);
-					
-					
+
 					validWriter.write(outRec.getData());
 					validWriter.newLine();
 					validWriter.flush();
 					validWriter.close();
 					numRecord++;
-					
+
 					endSequenceCDR++;
-					if (endSequenceCDR>9999999) {endSequenceCDR=1;}
-					PrintWriter out = new PrintWriter("config/sequence.txt");
+					if (endSequenceCDR > 9999999) {
+						endSequenceCDR = 1;
+					}
+					PrintWriter out = new PrintWriter(getSeqFilePath());
 					out.println(fileSequence);
 					out.println(endSequenceCDR);
 
@@ -506,53 +498,14 @@ public abstract class FlatFileOutputAdapter extends
 			}
 		}
 
-		// Check size, time, number of records
-		//		maxSize in MB
-		//		maxTime in hour
-		//		maxRecord 
-		try {
-			File fXmlFile = new File("config/constraints.xml");
-			DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
-			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-			Document doc = dBuilder.parse(fXmlFile);
- 
-			//optional, but recommended
-			//read this - http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
-			doc.getDocumentElement().normalize();
- 
- 
-			NodeList nList1 = doc.getElementsByTagName("maxTime");
-			NodeList nList2 = doc.getElementsByTagName("maxRecord");
-			NodeList nList3 = doc.getElementsByTagName("maxSize");
-			
-			maxTime=Double.parseDouble(nList1.item(0).getTextContent());
-			maxRecord=Long.parseLong(nList2.item(0).getTextContent());
-			maxSize=Double.parseDouble(nList3.item(0).getTextContent());
-
-
-			
-		} catch (DOMException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (ParserConfigurationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (SAXException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		
 		if (!writeToNew) {
 			File file = new File(proOutputFileName);
 			timeEnd = System.currentTimeMillis() / 1000;
 
 			timeInterval = (timeEnd - timeBegin);
-			
+
 			if ((file.length() > maxSize * 0.95 * 1024 * 1024)
-					|| (timeInterval > maxTime*3600*0.95)
+					|| (timeInterval > maxTime * 3600 * 0.95)
 					|| (numRecord == maxRecord)) {
 				try {
 					// replace needeed value in file header
@@ -573,10 +526,8 @@ public abstract class FlatFileOutputAdapter extends
 
 					raf.seek(81);
 					raf.writeBytes(df.format(numRecord));
-					
-				
-					raf.close();
 
+					raf.close();
 
 					// checksum the file
 					RandomAccessFile f = new RandomAccessFile(
@@ -593,10 +544,9 @@ public abstract class FlatFileOutputAdapter extends
 					f.seek(3);
 					f.write(sum);
 					f.close();
-					
-					
-					doing=false;
-					
+
+					doing = false;
+
 					// put the right input sequence for next file
 
 					fileSequence++;
@@ -607,7 +557,7 @@ public abstract class FlatFileOutputAdapter extends
 					if (endSequenceCDR > 9999999) {
 						endSequenceCDR = 1;
 					}
-					PrintWriter out = new PrintWriter("config/sequence.txt");
+					PrintWriter out = new PrintWriter(getSeqFilePath());
 					out.println(fileSequence);
 					out.println(endSequenceCDR);
 
@@ -620,12 +570,11 @@ public abstract class FlatFileOutputAdapter extends
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-				
-				
+
 				// rename the file
 				File oldFile = new File(proOutputFileName);
-			    File newFile = new File(outputFileName);
-			    oldFile.renameTo(newFile);
+				File newFile = new File(outputFileName);
+				oldFile.renameTo(newFile);
 
 				writeToNew = true;
 				numRecord = 0;
@@ -1253,7 +1202,7 @@ public abstract class FlatFileOutputAdapter extends
 		tmpFile = PropertyUtils.getPropertyUtils()
 				.getBatchOutputAdapterPropertyValueDef(getPipeName(),
 						getSymbolicName(), SERVICE_FILE_PREFIX, "");
-		
+
 		return tmpFile;
 	}
 
