@@ -70,3 +70,43 @@
 2014-10-23 11:34:31,892 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
 2014-10-23 11:34:31,898 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
 2014-10-23 11:34:31,900 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-23 14:09:29,967 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-23 14:09:29,997 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-23 14:09:30,563 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-23 14:09:31,531 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-23 14:09:31,594 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-23 14:09:31,637 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-23 14:09:31,638 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 1ms.
+2014-10-23 14:09:31,657 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-23 14:09:31,748 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-23 14:09:31,751 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-23 14:10:12,696 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-23 14:10:12,700 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-23 14:10:13,168 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-23 14:10:13,979 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-23 14:10:13,993 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-23 14:10:13,993 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-23 14:10:13,994 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 1ms.
+2014-10-23 14:10:14,000 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-23 14:10:14,012 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-23 14:10:14,014 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-23 14:36:19,579 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-23 14:36:19,583 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-23 14:36:19,993 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-23 14:36:21,102 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-23 14:36:21,110 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-23 14:36:21,116 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-23 14:36:21,117 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 1ms.
+2014-10-23 14:36:21,122 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-23 14:36:21,134 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-23 14:36:21,136 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-23 14:37:29,728 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-23 14:37:29,732 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-23 14:37:30,217 C3P0DataSource.java           [ 181] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-23 14:37:31,248 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-23 14:37:31,260 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-23 14:37:31,261 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-23 14:37:31,261 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-23 14:37:31,269 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe> ***
+2014-10-23 14:37:31,281 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe>
+2014-10-23 14:37:31,283 TransactionManager.java       [ 206] INFO  - TransactionManager initialised

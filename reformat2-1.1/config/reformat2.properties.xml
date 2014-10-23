@@ -28,7 +28,7 @@
 				<DataSource>eOneRateDB</DataSource>
 				<ValidateStatement>
 					SELECT COUNT (1)
-					  FROM VNP_DATA.HOT_RATED_CDR
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
 					 WHERE    DATA_PART = 0
 						   OR DATA_PART = 1
 						   OR DATA_PART = 2
@@ -42,7 +42,7 @@
 				</ValidateStatement>
 				<RecordCountStatement>
 					SELECT COUNT (1)
-					  FROM VNP_DATA.HOT_RATED_CDR
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
 					 WHERE     (   DATA_PART = 0
 								OR DATA_PART = 1
 								OR DATA_PART = 2
@@ -56,7 +56,7 @@
 						   AND RERATE_FLAG = 0
 				</RecordCountStatement>
 				<InitStatement>
-					UPDATE VNP_DATA.HOT_RATED_CDR
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
 					   SET RERATE_FLAG = 1
 					 WHERE     (   DATA_PART = 0
 								OR DATA_PART = 1
@@ -71,7 +71,7 @@
 						   AND ROWID IN
 								  (SELECT IDS
 									 FROM (  SELECT ROWID IDS
-											   FROM VNP_DATA.HOT_RATED_CDR
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
 											  WHERE     (   DATA_PART = 0
 														 OR DATA_PART = 1
 														 OR DATA_PART = 2
@@ -120,7 +120,7 @@
 							 TARIFF_PLAN_ID,
 							 MAP_ID,
 							 DATA_PART
-						FROM VNP_DATA.HOT_RATED_CDR
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
 					   WHERE     (   DATA_PART = 0
 								  OR DATA_PART = 1
 								  OR DATA_PART = 2
@@ -135,7 +135,7 @@
 					ORDER BY CDR_START_TIME
 				</RecordSelectStatement>
 				<CommitStatement>
-					UPDATE VNP_DATA.HOT_RATED_CDR
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
 					   SET RERATE_FLAG = 2
 					 WHERE     (   DATA_PART = 0
 								OR DATA_PART = 1
@@ -150,7 +150,7 @@
 						   AND RERATE_FLAG = 1
 				</CommitStatement>
 				<RollbackStatement>
-					UPDATE VNP_DATA.HOT_RATED_CDR
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
 					   SET RERATE_FLAG = 3
 					 WHERE     (   DATA_PART = 0
 								OR DATA_PART = 1
@@ -200,8 +200,8 @@
 			</DataSourceBuilder>
 			<DataSource>
 				<eOneRateDB>
-					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))</db_url>
-<!-- 					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))</db_url> -->
+<!-- 					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))</db_url> -->
+					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.113)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.114)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))</db_url>
 					<driver>oracle.jdbc.driver.OracleDriver</driver>
 					<username>vnp_common</username>
 					<password>vnp_common</password>
@@ -231,11 +231,11 @@
 		<CacheFactory>
 			<ClassName>ElcRate.resource.CacheFactory</ClassName>
 			<CacheableClass>
-				<PrefixCache>
-					<ClassName>ElcRate.cache.BestMatchCache</ClassName>
-					<DataSourceType>File</DataSourceType>
-					<DataFile>configData/prefixdesc.dat</DataFile>
-				</PrefixCache>
+<!-- 				<PrefixCache> -->
+<!-- 					<ClassName>ElcRate.cache.BestMatchCache</ClassName> -->
+<!-- 					<DataSourceType>File</DataSourceType> -->
+<!-- 					<DataFile>configData/prefixdesc.dat</DataFile> -->
+<!-- 				</PrefixCache> -->
 			</CacheableClass>
 		</CacheFactory>
 	</Resource>

@@ -1,7 +1,7 @@
-2014-10-23 11:34:36,936 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <10> events for processing
-2014-10-23 11:34:36,997 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
-2014-10-23 11:34:37,542 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <12> events from a batch of <12> events in <159> ms
-2014-10-23 11:34:37,546 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
-2014-10-23 11:34:37,547 TransactionManager.java       [ 267] INFO  - Statistics: Records  <10>
-2014-10-23 11:34:37,547 TransactionManager.java       [ 268] INFO  -             Duration <549> ms
-2014-10-23 11:34:37,547 TransactionManager.java       [ 270] INFO  -             Speed    <18> records /sec
+2014-10-23 14:37:51,350 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-23 14:37:51,447 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe>
+2014-10-23 14:37:51,589 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <37> ms
+2014-10-23 14:37:51,594 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-23 14:37:51,594 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-23 14:37:51,594 TransactionManager.java       [ 268] INFO  -             Duration <146> ms
+2014-10-23 14:37:51,594 TransactionManager.java       [ 270] INFO  -             Speed    <34> records /sec

@@ -4,13 +4,7 @@
  */
 package eonerate.reformat2.entity;
 
-/**
- * @class RateRecord.java
- * @time Created on Nov 3, 2013, 11:36:05 AM
- * @author hinhnd
- */
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.text.DecimalFormat;
@@ -25,6 +19,8 @@ import java.util.Scanner;
 
 import org.apache.commons.lang.StringUtils;
 
+import ElcRate.logging.ILogger;
+import ElcRate.logging.LogUtil;
 import ElcRate.record.ChargePacket;
 import ElcRate.record.ErrorType;
 import ElcRate.record.IError;
@@ -33,10 +29,12 @@ import ElcRate.record.RatingRecord;
 import ElcRate.record.RecordError;
 
 public class RateRecord extends RatingRecord {
-	
-	static long startSequenceCDR=1;
-	static boolean isOpened=false;
-	
+
+	ILogger LOG_PROCESSING = LogUtil.getLogUtil().getLogger("Processing");
+
+	static long startSequenceCDR = 1;
+	static boolean isOpened = false;
+
 	// These are the mappings to the fields for input CDR
 	public static final int IDX_A_NUMBER = 0;
 	public static final int IDX_CDR_TYPE = 1;
@@ -280,12 +278,34 @@ public class RateRecord extends RatingRecord {
 		this.fields = OrginalData;
 	}
 
+	private String getStringByFields() {
+
+		String result = null;
+
+		StringBuilder sb = new StringBuilder();
+
+		for (String item : this.fields) {
+			sb.append(item);
+			sb.append("|");
+		}
+
+		result = sb.toString();
+
+		result = result.substring(0, result.length() - 1);
+
+		return result;
+
+	}
+
 	/**
 	 * Utilities functions to map Main record
 	 *
-	 * @param OrginalData The OrginalData to map
+	 * @param recordType The OrginalData to map
 	 */
-	public void mapVNPRecord(String OrginalData) {
+	public void mapVNPRecord(String recordType) {
+
+		LOG_PROCESSING.info("TODO: Map InputRecord to object: " + getStringByFields());
+
 		RecordError tmpError;
 		SimpleDateFormat sdfInput = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		//seqNextVal= Integer.parseInt(getField(IDX_MAP_ID));
@@ -297,7 +317,7 @@ public class RateRecord extends RatingRecord {
 		this.Seq = seqNextVal;
 
 		//Set Orginal Data for Dump
-		this.OriginalData = OrginalData;
+		this.OriginalData = recordType;
 
 		//Category the CDR type for processing , 1 is VoiceCall, 4 is SMS, ..
 		this.RecordType = getField(IDX_CDR_TYPE);
@@ -657,28 +677,46 @@ public class RateRecord extends RatingRecord {
 
 	}
 
-public String getActivityType( String s)
-{
-	 String result = null;
-	 if (s.equals("1")){ result="0";}
-	 if (s.equals("4")){ result="1";}
-	 if (s.equals("5")){ result="2";}
-	 if (s.equals("7")){ result="6";}
-	 
-	 return result;
-	 
-}
-public String getRecordType( String s)
-{
-	 String result = null;
-	 if (s.equals("1")){ result="VOI";}
-	 if (s.equals("4")){ result="CMS";}
-	 if (s.equals("5")){ result="GPR";}
-	 if (s.equals("7")){ result="OCS";}
-	 
-	 return result;
-	 
-}
+	public String getActivityType(String s)
+	{
+		String result = null;
+		if (s.equals("1")) {
+			result = "0";
+		}
+		if (s.equals("4")) {
+			result = "1";
+		}
+		if (s.equals("5")) {
+			result = "2";
+		}
+		if (s.equals("7")) {
+			result = "6";
+		}
+
+		return result;
+
+	}
+
+	public String getRecordType(String s)
+	{
+		String result = null;
+		if (s.equals("1")) {
+			result = "VOI";
+		}
+		if (s.equals("4")) {
+			result = "CMS";
+		}
+		if (s.equals("5")) {
+			result = "GPR";
+		}
+		if (s.equals("7")) {
+			result = "OCS";
+		}
+
+		return result;
+
+	}
+
 	public String unmapOriginalData() {
 
 		String outFields[] = new String[138];
@@ -695,513 +733,497 @@ public String getRecordType( String s)
 			RecordError tmpErr = (RecordError) iError.next();
 			errMessage = tmpErr.getType() + " -> " + tmpErr.getMessage();
 		}
-		
+
 		// open file sequence to take CDR sequence
 		if (!isOpened)
-		try {
-			File source = new File("config/sequence.txt");
-			if (!source.exists()) {
-				PrintWriter out = new PrintWriter(new FileOutputStream(
-						"config/sequence.txt"));
-				out.println(1);
-				out.println(1);
-				out.flush();
-				out.close();
-			}
-			isOpened=true;
-			Scanner scanner = new Scanner(source);
-			Long fileSequence = scanner.nextLong();
-			startSequenceCDR = scanner.nextLong();
-			scanner.close();
+			try {
+				File source = new File("config/sequence.txt");
+				if (!source.exists()) {
+					PrintWriter out = new PrintWriter(new FileOutputStream(
+							"config/sequence.txt"));
+					out.println(1);
+					out.println(1);
+					out.flush();
+					out.close();
+				}
+				isOpened = true;
+				Scanner scanner = new Scanner(source);
+				Long fileSequence = scanner.nextLong();
+				startSequenceCDR = scanner.nextLong();
+				scanner.close();
 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		DecimalFormat df = new DecimalFormat("0000000000");
 
-		outFields[OrpRecord.Field.RecordType.ordinal()]= getRecordType( RecordType);
-		outFields[OrpRecord.Field.RecordSequenceNumber.ordinal()]=df.format(startSequenceCDR);
-		if (isOpened){ startSequenceCDR++;}
-			
-		outFields[OrpRecord.Field.ActivityType.ordinal()]=getActivityType( RecordType);
-		outFields[OrpRecord.Field.ResultCode.ordinal()]="0";
-		outFields[OrpRecord.Field.ResultText.ordinal()]="OR_RSLT_UNPROCESSED(0)";
-		outFields[OrpRecord.Field.Reserved1.ordinal()]="";
-		outFields[OrpRecord.Field.Reserved2.ordinal()]="";
-		
+		outFields[OrpRecord.Field.RecordType.ordinal()] = getRecordType(RecordType);
+		outFields[OrpRecord.Field.RecordSequenceNumber.ordinal()] = df.format(startSequenceCDR);
+		if (isOpened) {
+			startSequenceCDR++;
+		}
+
+		outFields[OrpRecord.Field.ActivityType.ordinal()] = getActivityType(RecordType);
+		outFields[OrpRecord.Field.ResultCode.ordinal()] = "0";
+		outFields[OrpRecord.Field.ResultText.ordinal()] = "OR_RSLT_UNPROCESSED(0)";
+		outFields[OrpRecord.Field.Reserved1.ordinal()] = "";
+		outFields[OrpRecord.Field.Reserved2.ordinal()] = "";
+
 		if (RecordType.equals("1"))
 		{
-		outFields[OrpRecord.Field.RecordOrigin.ordinal()]="slu999";
-		outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()]="1410393600";
-		outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()]="1410393601";
-		outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()]="1410393620";
-		outFields[OrpRecord.Field.ANumber.ordinal()]=NumberA;
-		outFields[OrpRecord.Field.BNumber.ordinal()]=NumberB;
-		outFields[OrpRecord.Field.ExternalId.ordinal()]=NumberA;
-		outFields[OrpRecord.Field.ExternalIdtype.ordinal()]="1";
-		outFields[OrpRecord.Field.MSCID.ordinal()]="84102";
-		outFields[OrpRecord.Field.MSRN.ordinal()]="";
-		outFields[OrpRecord.Field.ApplicationType.ordinal()]="1";
-		outFields[OrpRecord.Field.Subtype.ordinal()]="0";
-		outFields[OrpRecord.Field.UnitType.ordinal()]="2";
-		outFields[OrpRecord.Field.ReferenceNumber.ordinal()]="10477";
-		outFields[OrpRecord.Field.InitialAUT.ordinal()]="30012";
-		outFields[OrpRecord.Field.ChargeType.ordinal()]="";
-		outFields[OrpRecord.Field.SGSN.ordinal()]="";
-		outFields[OrpRecord.Field.ClearCause.ordinal()]="16";
-		outFields[OrpRecord.Field.CellID.ordinal()]="4520200003500100";
-		outFields[OrpRecord.Field.NetworkCalltype.ordinal()]="0";
-		outFields[OrpRecord.Field.ConsumedAmount.ordinal()]="0.000000";
-		outFields[OrpRecord.Field.UTCOffset.ordinal()]="420";
-		outFields[OrpRecord.Field.Origin.ordinal()]="2";
-		outFields[OrpRecord.Field.PortedNumber.ordinal()]="";
-		outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()]="0.000000";
-		outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()]="";
-		outFields[OrpRecord.Field.GSMProviderID.ordinal()]="";
-		outFields[OrpRecord.Field.APN.ordinal()]="";
-		outFields[OrpRecord.Field.QOS.ordinal()]="";
-		outFields[OrpRecord.Field.ReservationType.ordinal()]="";
-		outFields[OrpRecord.Field.PDPInitType.ordinal()]="";
-		outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()]="";
-		outFields[OrpRecord.Field.ECIMessageType.ordinal()]="";
-		outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()]="";
-		outFields[OrpRecord.Field.ECIMISSIDN.ordinal()]="";
-		outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()]="";
-		outFields[OrpRecord.Field.ECISubscriberType.ordinal()]="";
-		outFields[OrpRecord.Field.ECIBearerCapability.ordinal()]="";
-		outFields[OrpRecord.Field.ECIApplicationID.ordinal()]="";
-		outFields[OrpRecord.Field.ECITransactionID1.ordinal()]="";
-		outFields[OrpRecord.Field.ECITransactionID2.ordinal()]="";
-		outFields[OrpRecord.Field.ECIAccessMT.ordinal()]="";
-		outFields[OrpRecord.Field.ECIMINtranslation.ordinal()]="";
-		outFields[OrpRecord.Field.ECIChargeAmount.ordinal()]="";		
-		outFields[OrpRecord.Field.ECIProrate.ordinal()]="";
-		outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()]="";
-		outFields[OrpRecord.Field.ECIInforParam1.ordinal()]="";
-		outFields[OrpRecord.Field.ECIInforParam2.ordinal()]="";
-		outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()]="4520200003500100";
-		outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()]="-1";
-		outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()]="-1";
-		outFields[OrpRecord.Field.CallProcessorCallType.ordinal()]="52";
-		outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()]="0";
-		outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()]="";
-		outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()]="";
-		outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()]="";
-		outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()]="";
-		outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()]="-";
-		outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()]="O";
-		outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()]="";	
-		outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()]="";
-		outFields[OrpRecord.Field.Billable.ordinal()]="1";
-		outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()]="";
-		outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()]="";
-		outFields[OrpRecord.Field.OsaReservationType.ordinal()]="";
-		outFields[OrpRecord.Field.OsaSubscriberId.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamItem.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamSubtype.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamContract.ordinal()]="";
-		outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamQos.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamService1.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamService2.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamService3.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamService4.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamInformational.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()]="";
-		outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()]="";
-		outFields[OrpRecord.Field.OsaMerchantId.ordinal()]="";
-		outFields[OrpRecord.Field.OsaSessionDescription.ordinal()]="";
-		outFields[OrpRecord.Field.OsaSessionID.ordinal()]="";
-		outFields[OrpRecord.Field.OsaCorrelationId.ordinal()]="";
-		outFields[OrpRecord.Field.OsaCorrelationType.ordinal()]="";
-		outFields[OrpRecord.Field.OsaMerAccount.ordinal()]="";
-		outFields[OrpRecord.Field.OsaApplDescText.ordinal()]="";
-		outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()]="";
-		outFields[OrpRecord.Field.OsaCurrency.ordinal()]="";
-		outFields[OrpRecord.Field.OsaReasonCode.ordinal()]="";
-		outFields[OrpRecord.Field.OsaRequestType.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsapplication.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsactivitytime.ordinal()]="";
-		outFields[OrpRecord.Field.OcsRequesttype.ordinal()]="";
-		outFields[OrpRecord.Field.OcsTBit.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()]="";
-		outFields[OrpRecord.Field.Ocscurrencytype.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsimsinum.ordinal()]="";
-		outFields[OrpRecord.Field.Ocschargeitemid.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssessiongid.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssubsessionid.ordinal()]="";
-		outFields[OrpRecord.Field.Ocstransactionid.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssubscriberid.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssessiondesc.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssublocation.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssublocationtype.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()]="";
-		outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()]="";
-		outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()]="";
-		outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()]="234";
-		outFields[OrpRecord.Field.Offereddtmsec.ordinal()]="156";
-		outFields[OrpRecord.Field.Answereddtmsec.ordinal()]="161";
-		outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()]="164";
-		outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()]="1";
-		outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()]="";
-		outFields[OrpRecord.Field.IMSIA.ordinal()]="";
-		outFields[OrpRecord.Field.IMSIB.ordinal()]="";
-		outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()]=NumberB;
-		outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()]=NumberB;
-		outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()]="0";
-		outFields[OrpRecord.Field.networkaddressplan.ordinal()]="1";
+			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1410393600";
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1410393601";
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1410393620";
+			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.BNumber.ordinal()] = NumberB;
+			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.ExternalIdtype.ordinal()] = "1";
+			outFields[OrpRecord.Field.MSCID.ordinal()] = "84102";
+			outFields[OrpRecord.Field.MSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.ApplicationType.ordinal()] = "1";
+			outFields[OrpRecord.Field.Subtype.ordinal()] = "0";
+			outFields[OrpRecord.Field.UnitType.ordinal()] = "2";
+			outFields[OrpRecord.Field.ReferenceNumber.ordinal()] = "10477";
+			outFields[OrpRecord.Field.InitialAUT.ordinal()] = "30012";
+			outFields[OrpRecord.Field.ChargeType.ordinal()] = "";
+			outFields[OrpRecord.Field.SGSN.ordinal()] = "";
+			outFields[OrpRecord.Field.ClearCause.ordinal()] = "16";
+			outFields[OrpRecord.Field.CellID.ordinal()] = "4520200003500100";
+			outFields[OrpRecord.Field.NetworkCalltype.ordinal()] = "0";
+			outFields[OrpRecord.Field.ConsumedAmount.ordinal()] = "0.000000";
+			outFields[OrpRecord.Field.UTCOffset.ordinal()] = "420";
+			outFields[OrpRecord.Field.Origin.ordinal()] = "2";
+			outFields[OrpRecord.Field.PortedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = "0.000000";
+			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.GSMProviderID.ordinal()] = "";
+			outFields[OrpRecord.Field.APN.ordinal()] = "";
+			outFields[OrpRecord.Field.QOS.ordinal()] = "";
+			outFields[OrpRecord.Field.ReservationType.ordinal()] = "";
+			outFields[OrpRecord.Field.PDPInitType.ordinal()] = "";
+			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMessageType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISubscriberType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIBearerCapability.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIApplicationID.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID2.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAccessMT.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMINtranslation.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIChargeAmount.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIProrate.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam2.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()] = "4520200003500100";
+			outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()] = "-1";
+			outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()] = "-1";
+			outFields[OrpRecord.Field.CallProcessorCallType.ordinal()] = "52";
+			outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()] = "0";
+			outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()] = "-";
+			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()] = "O";
+			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.Billable.ordinal()] = "1";
+			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReservationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamItem.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubtype.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamContract.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamQos.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService1.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService2.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService3.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService4.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamInformational.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerchantId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionDescription.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionID.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerAccount.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaApplDescText.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReasonCode.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaRequestType.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplication.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsactivitytime.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsRequesttype.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsTBit.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocscurrencytype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsimsinum.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocschargeitemid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiongid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubsessionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocstransactionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubscriberid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiondesc.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()] = "";
+			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()] = "234";
+			outFields[OrpRecord.Field.Offereddtmsec.ordinal()] = "156";
+			outFields[OrpRecord.Field.Answereddtmsec.ordinal()] = "161";
+			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()] = "164";
+			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()] = "1";
+			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIA.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIB.ordinal()] = "";
+			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()] = NumberB;
+			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()] = NumberB;
+			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()] = "0";
+			outFields[OrpRecord.Field.networkaddressplan.ordinal()] = "1";
 		}
 		if (RecordType.equals("4"))
-		{	
-			outFields[OrpRecord.Field.RecordOrigin.ordinal()]="slu999";
-			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()]="1413947207";
-			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()]="1413947207";
-			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()]="1413947207";
-			outFields[OrpRecord.Field.ANumber.ordinal()]=NumberA;
-			outFields[OrpRecord.Field.BNumber.ordinal()]=NumberB;
-			outFields[OrpRecord.Field.ExternalId.ordinal()]=NumberA;	
-			outFields[OrpRecord.Field.ExternalIdtype.ordinal()]="1";
-			outFields[OrpRecord.Field.MSCID.ordinal()]="8491020467";
-			outFields[OrpRecord.Field.MSRN.ordinal()]="";
-			outFields[OrpRecord.Field.ApplicationType.ordinal()]="2";
-			outFields[OrpRecord.Field.Subtype.ordinal()]="0";
-			outFields[OrpRecord.Field.UnitType.ordinal()]="4";
-			outFields[OrpRecord.Field.ReferenceNumber.ordinal()]="155";
-			outFields[OrpRecord.Field.InitialAUT.ordinal()]="30016";
-			outFields[OrpRecord.Field.ChargeType.ordinal()]="";
-			outFields[OrpRecord.Field.SGSN.ordinal()]="";
-			outFields[OrpRecord.Field.ClearCause.ordinal()]="16";
-			outFields[OrpRecord.Field.CellID.ordinal()]="84910100401999";
-			outFields[OrpRecord.Field.NetworkCalltype.ordinal()]="0";
-			outFields[OrpRecord.Field.ConsumedAmount.ordinal()]="";
-			outFields[OrpRecord.Field.UTCOffset.ordinal()]="420";
-			outFields[OrpRecord.Field.Origin.ordinal()]="0";
-			outFields[OrpRecord.Field.PortedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()]="";
-			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()]="";
-			outFields[OrpRecord.Field.GSMProviderID.ordinal()]="";
-			outFields[OrpRecord.Field.APN.ordinal()]="";
-			outFields[OrpRecord.Field.QOS.ordinal()]="";
-			outFields[OrpRecord.Field.ReservationType.ordinal()]="";
-			outFields[OrpRecord.Field.PDPInitType.ordinal()]="";
-			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()]="";
-			outFields[OrpRecord.Field.ECIMessageType.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()]="";
-			outFields[OrpRecord.Field.ECISubscriberType.ordinal()]="";
-			outFields[OrpRecord.Field.ECIBearerCapability.ordinal()]="";
-			outFields[OrpRecord.Field.ECIApplicationID.ordinal()]="";
-			outFields[OrpRecord.Field.ECITransactionID1.ordinal()]="";
-			outFields[OrpRecord.Field.ECITransactionID2.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAccessMT.ordinal()]="";
-			outFields[OrpRecord.Field.ECIMINtranslation.ordinal()]="";
-			outFields[OrpRecord.Field.ECIChargeAmount.ordinal()]="";		
-			outFields[OrpRecord.Field.ECIProrate.ordinal()]="";
-			outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()]="";
-			outFields[OrpRecord.Field.ECIInforParam1.ordinal()]="";
-			outFields[OrpRecord.Field.ECIInforParam2.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCallType.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()]="";	
-			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()]="";
-			outFields[OrpRecord.Field.Billable.ordinal()]="1";
-			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()]="55";
-			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()]="";
-			outFields[OrpRecord.Field.OsaReservationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamItem.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubtype.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamContract.ordinal()]="";
-			outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamQos.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService1.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService2.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService3.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService4.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamInformational.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()]="";
-			outFields[OrpRecord.Field.OsaMerchantId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSessionDescription.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSessionID.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCorrelationId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCorrelationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaMerAccount.ordinal()]="";
-			outFields[OrpRecord.Field.OsaApplDescText.ordinal()]="";
-			outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCurrency.ordinal()]="";
-			outFields[OrpRecord.Field.OsaReasonCode.ordinal()]="";
-			outFields[OrpRecord.Field.OsaRequestType.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsapplication.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsactivitytime.ordinal()]="";
-			outFields[OrpRecord.Field.OcsRequesttype.ordinal()]="";
-			outFields[OrpRecord.Field.OcsTBit.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocscurrencytype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsimsinum.ordinal()]="";
-			outFields[OrpRecord.Field.Ocschargeitemid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssessiongid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubsessionid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocstransactionid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubscriberid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssessiondesc.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssublocation.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssublocationtype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()]="";
-			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()]="420";
-			outFields[OrpRecord.Field.Offereddtmsec.ordinal()]="";
-			outFields[OrpRecord.Field.Answereddtmsec.ordinal()]="";
-			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()]="";
-			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()]="1";
-			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()]="";
-			outFields[OrpRecord.Field.IMSIA.ordinal()]="";
-			outFields[OrpRecord.Field.IMSIB.ordinal()]="";
-			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()]="0";
-			outFields[OrpRecord.Field.networkaddressplan.ordinal()]="1";
-		
+		{
+			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1413947207";
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1413947207";
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1413947207";
+			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.BNumber.ordinal()] = NumberB;
+			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.ExternalIdtype.ordinal()] = "1";
+			outFields[OrpRecord.Field.MSCID.ordinal()] = "8491020467";
+			outFields[OrpRecord.Field.MSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.ApplicationType.ordinal()] = "2";
+			outFields[OrpRecord.Field.Subtype.ordinal()] = "0";
+			outFields[OrpRecord.Field.UnitType.ordinal()] = "4";
+			outFields[OrpRecord.Field.ReferenceNumber.ordinal()] = "155";
+			outFields[OrpRecord.Field.InitialAUT.ordinal()] = "30016";
+			outFields[OrpRecord.Field.ChargeType.ordinal()] = "";
+			outFields[OrpRecord.Field.SGSN.ordinal()] = "";
+			outFields[OrpRecord.Field.ClearCause.ordinal()] = "16";
+			outFields[OrpRecord.Field.CellID.ordinal()] = "84910100401999";
+			outFields[OrpRecord.Field.NetworkCalltype.ordinal()] = "0";
+			outFields[OrpRecord.Field.ConsumedAmount.ordinal()] = "";
+			outFields[OrpRecord.Field.UTCOffset.ordinal()] = "420";
+			outFields[OrpRecord.Field.Origin.ordinal()] = "0";
+			outFields[OrpRecord.Field.PortedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = "";
+			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.GSMProviderID.ordinal()] = "";
+			outFields[OrpRecord.Field.APN.ordinal()] = "";
+			outFields[OrpRecord.Field.QOS.ordinal()] = "";
+			outFields[OrpRecord.Field.ReservationType.ordinal()] = "";
+			outFields[OrpRecord.Field.PDPInitType.ordinal()] = "";
+			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMessageType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISubscriberType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIBearerCapability.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIApplicationID.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID2.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAccessMT.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMINtranslation.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIChargeAmount.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIProrate.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam2.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCallType.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.Billable.ordinal()] = "1";
+			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()] = "55";
+			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReservationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamItem.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubtype.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamContract.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamQos.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService1.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService2.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService3.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService4.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamInformational.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerchantId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionDescription.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionID.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerAccount.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaApplDescText.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReasonCode.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaRequestType.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplication.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsactivitytime.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsRequesttype.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsTBit.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocscurrencytype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsimsinum.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocschargeitemid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiongid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubsessionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocstransactionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubscriberid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiondesc.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()] = "";
+			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()] = "420";
+			outFields[OrpRecord.Field.Offereddtmsec.ordinal()] = "";
+			outFields[OrpRecord.Field.Answereddtmsec.ordinal()] = "";
+			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()] = "";
+			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()] = "1";
+			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIA.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIB.ordinal()] = "";
+			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()] = "0";
+			outFields[OrpRecord.Field.networkaddressplan.ordinal()] = "1";
+
 		}
-		
+
 		if (RecordType.equals("5"))
 		{
-			outFields[OrpRecord.Field.RecordOrigin.ordinal()]="slu999";
-			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()]="1398290056";
-			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()]="1398290057";
-			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()]="1398290157";
-			outFields[OrpRecord.Field.ANumber.ordinal()]=NumberA;
-			outFields[OrpRecord.Field.BNumber.ordinal()]="GPRS_LOCATION";
-			outFields[OrpRecord.Field.ExternalId.ordinal()]=NumberA;	
-			outFields[OrpRecord.Field.ExternalIdtype.ordinal()]="0";
-			outFields[OrpRecord.Field.MSCID.ordinal()]="";
-			outFields[OrpRecord.Field.MSRN.ordinal()]="";
-			outFields[OrpRecord.Field.ApplicationType.ordinal()]="10";
-			outFields[OrpRecord.Field.Subtype.ordinal()]="30025";
-			outFields[OrpRecord.Field.UnitType.ordinal()]="3";
-			outFields[OrpRecord.Field.ReferenceNumber.ordinal()]="90000";
-			outFields[OrpRecord.Field.InitialAUT.ordinal()]="30040";
-			outFields[OrpRecord.Field.ChargeType.ordinal()]="";
-			outFields[OrpRecord.Field.SGSN.ordinal()]="84910299999";
-			outFields[OrpRecord.Field.ClearCause.ordinal()]="16";
-			outFields[OrpRecord.Field.CellID.ordinal()]="";
-			outFields[OrpRecord.Field.NetworkCalltype.ordinal()]="";
-			outFields[OrpRecord.Field.ConsumedAmount.ordinal()]="123450";
-			outFields[OrpRecord.Field.UTCOffset.ordinal()]="420";
-			outFields[OrpRecord.Field.Origin.ordinal()]="2";
-			outFields[OrpRecord.Field.PortedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()]="0";
-			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()]="";
-			outFields[OrpRecord.Field.GSMProviderID.ordinal()]="";
-			outFields[OrpRecord.Field.APN.ordinal()]="m3-card";
-			outFields[OrpRecord.Field.QOS.ordinal()]="4001";
-			outFields[OrpRecord.Field.ReservationType.ordinal()]="1";
-			outFields[OrpRecord.Field.PDPInitType.ordinal()]="0";
-			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()]="4520200003500100";
-			outFields[OrpRecord.Field.ECIMessageType.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()]="";
-			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()]="";
-			outFields[OrpRecord.Field.ECISubscriberType.ordinal()]="";
-			outFields[OrpRecord.Field.ECIBearerCapability.ordinal()]="";
-			outFields[OrpRecord.Field.ECIApplicationID.ordinal()]="";
-			outFields[OrpRecord.Field.ECITransactionID1.ordinal()]="";
-			outFields[OrpRecord.Field.ECITransactionID2.ordinal()]="";
-			outFields[OrpRecord.Field.ECIAccessMT.ordinal()]="";
-			outFields[OrpRecord.Field.ECIMINtranslation.ordinal()]="";
-			outFields[OrpRecord.Field.ECIChargeAmount.ordinal()]="";		
-			outFields[OrpRecord.Field.ECIProrate.ordinal()]="";
-			outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()]="";
-			outFields[OrpRecord.Field.ECIInforParam1.ordinal()]="";
-			outFields[OrpRecord.Field.ECIInforParam2.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCallType.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()]="";
-			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()]="";	
-			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()]="";
-			outFields[OrpRecord.Field.Billable.ordinal()]="";
-			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()]="";
-			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()]="";
-			outFields[OrpRecord.Field.OsaReservationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamItem.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubtype.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamContract.ordinal()]="";
-			outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamQos.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService1.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService2.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService3.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamService4.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamInformational.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()]="";
-			outFields[OrpRecord.Field.OsaMerchantId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSessionDescription.ordinal()]="";
-			outFields[OrpRecord.Field.OsaSessionID.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCorrelationId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCorrelationType.ordinal()]="";
-			outFields[OrpRecord.Field.OsaMerAccount.ordinal()]="";
-			outFields[OrpRecord.Field.OsaApplDescText.ordinal()]="";
-			outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()]="";
-			outFields[OrpRecord.Field.OsaCurrency.ordinal()]="";
-			outFields[OrpRecord.Field.OsaReasonCode.ordinal()]="";
-			outFields[OrpRecord.Field.OsaRequestType.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsapplication.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsactivitytime.ordinal()]="";
-			outFields[OrpRecord.Field.OcsRequesttype.ordinal()]="";
-			outFields[OrpRecord.Field.OcsTBit.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocscurrencytype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsimsinum.ordinal()]="";
-			outFields[OrpRecord.Field.Ocschargeitemid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssessiongid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubsessionid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocstransactionid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubscriberid.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssessiondesc.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssublocation.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssublocationtype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()]="";
-			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()]="";
-			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()]="";
-			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()]="";
-			outFields[OrpRecord.Field.Offereddtmsec.ordinal()]="156";
-			outFields[OrpRecord.Field.Answereddtmsec.ordinal()]="161";
-			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()]="164";
-			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()]="";
-			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()]="";
-			outFields[OrpRecord.Field.IMSIA.ordinal()]="";
-			outFields[OrpRecord.Field.IMSIB.ordinal()]="";
-			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()]=NumberA;
-			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()]=NumberA;
-			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()]="0";
-			outFields[OrpRecord.Field.networkaddressplan.ordinal()]="1";
+			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1398290056";
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1398290057";
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1398290157";
+			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.BNumber.ordinal()] = "GPRS_LOCATION";
+			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.ExternalIdtype.ordinal()] = "0";
+			outFields[OrpRecord.Field.MSCID.ordinal()] = "";
+			outFields[OrpRecord.Field.MSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.ApplicationType.ordinal()] = "10";
+			outFields[OrpRecord.Field.Subtype.ordinal()] = "30025";
+			outFields[OrpRecord.Field.UnitType.ordinal()] = "3";
+			outFields[OrpRecord.Field.ReferenceNumber.ordinal()] = "90000";
+			outFields[OrpRecord.Field.InitialAUT.ordinal()] = "30040";
+			outFields[OrpRecord.Field.ChargeType.ordinal()] = "";
+			outFields[OrpRecord.Field.SGSN.ordinal()] = "84910299999";
+			outFields[OrpRecord.Field.ClearCause.ordinal()] = "16";
+			outFields[OrpRecord.Field.CellID.ordinal()] = "";
+			outFields[OrpRecord.Field.NetworkCalltype.ordinal()] = "";
+			outFields[OrpRecord.Field.ConsumedAmount.ordinal()] = "123450";
+			outFields[OrpRecord.Field.UTCOffset.ordinal()] = "420";
+			outFields[OrpRecord.Field.Origin.ordinal()] = "2";
+			outFields[OrpRecord.Field.PortedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = "0";
+			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.GSMProviderID.ordinal()] = "";
+			outFields[OrpRecord.Field.APN.ordinal()] = "m3-card";
+			outFields[OrpRecord.Field.QOS.ordinal()] = "4001";
+			outFields[OrpRecord.Field.ReservationType.ordinal()] = "1";
+			outFields[OrpRecord.Field.PDPInitType.ordinal()] = "0";
+			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = "4520200003500100";
+			outFields[OrpRecord.Field.ECIMessageType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAltMISSIDN.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISubscriberType.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIBearerCapability.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIApplicationID.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECITransactionID2.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIAccessMT.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIMINtranslation.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIChargeAmount.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIProrate.ordinal()] = "";
+			outFields[OrpRecord.Field.ECISDPIDOrigin.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam1.ordinal()] = "";
+			outFields[OrpRecord.Field.ECIInforParam2.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCellIDLAI.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorPrePostIndicator.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorPOSTPAIDType.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCallType.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorNetworkNoCharge.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorRedirectingNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorMINIMSI.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorTranslatedDestinationNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorApartyMSRN.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorNCFLeg.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()] = "";
+			outFields[OrpRecord.Field.Billable.ordinal()] = "";
+			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReservationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamItem.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubtype.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamConfirmationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamContract.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaTimezoneOffset.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamQos.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService1.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService2.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService3.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamService4.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamInformational.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamSubLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocation.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamOtherLocationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaParamImsiMin.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerchantId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionDescription.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaSessionID.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCorrelationType.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaMerAccount.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaApplDescText.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaExtUnitTypeId.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaCurrency.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaReasonCode.ordinal()] = "";
+			outFields[OrpRecord.Field.OsaRequestType.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplication.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsapplicationdescription.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsspecialfeaturedigits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsactivitytime.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsRequesttype.ordinal()] = "";
+			outFields[OrpRecord.Field.OcsTBit.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunits.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsconsumedunittype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocscurrencytype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsimsinum.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocschargeitemid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiongid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubsessionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocstransactionid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubscriberid.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssessiondesc.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssublocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocation.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()] = "";
+			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()] = "";
+			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()] = "";
+			outFields[OrpRecord.Field.Offereddtmsec.ordinal()] = "156";
+			outFields[OrpRecord.Field.Answereddtmsec.ordinal()] = "161";
+			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()] = "164";
+			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()] = "";
+			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIA.ordinal()] = "";
+			outFields[OrpRecord.Field.IMSIB.ordinal()] = "";
+			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()] = "0";
+			outFields[OrpRecord.Field.networkaddressplan.ordinal()] = "1";
 		}
-		
-//		outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()]=df.format(super.EventStartDate.getTime()/1000);
-//		outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()]=df.format((super.EventStartDate.getTime()+1000)/1000);
-//		outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()]=df.format((super.EventStartDate.getTime()+10000)/1000);
-//		outFields[OrpRecord.Field.ANumber.ordinal()]=NumberA;
-//		outFields[OrpRecord.Field.BNumber.ordinal()]=NumberB;
-//		outFields[OrpRecord.Field.ExternalId.ordinal()]=NumberA;
-		
-		
-			
-		
 
-		
-		
-		
-	
-		
-		
-		
-		
-		
-		outFields[OrpRecord.Field.Ocssegmentid.ordinal()]="";
-		outFields[OrpRecord.Field.CpIncomingCallid.ordinal()]="";
-		outFields[OrpRecord.Field.CpOutgoingcallid.ordinal()]="";
-		outFields[OrpRecord.Field.OcsStartCallDatTimeType.ordinal()]="";
-		outFields[OrpRecord.Field.OcsEndCallDatTimeType.ordinal()]="";
+		//		outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()]=df.format(super.EventStartDate.getTime()/1000);
+		//		outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()]=df.format((super.EventStartDate.getTime()+1000)/1000);
+		//		outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()]=df.format((super.EventStartDate.getTime()+10000)/1000);
+		//		outFields[OrpRecord.Field.ANumber.ordinal()]=NumberA;
+		//		outFields[OrpRecord.Field.BNumber.ordinal()]=NumberB;
+		//		outFields[OrpRecord.Field.ExternalId.ordinal()]=NumberA;
 
-		
+		outFields[OrpRecord.Field.Ocssegmentid.ordinal()] = "";
+		outFields[OrpRecord.Field.CpIncomingCallid.ordinal()] = "";
+		outFields[OrpRecord.Field.CpOutgoingcallid.ordinal()] = "";
+		outFields[OrpRecord.Field.OcsStartCallDatTimeType.ordinal()] = "";
+		outFields[OrpRecord.Field.OcsEndCallDatTimeType.ordinal()] = "";
 
-		
-
-//		//Set output data
-//		
-//		outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = sdfInput.format(CreateTime);
-//		outFields[3] = sdfInput.format(CDRNativeDate);
-//		outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = sdfInput.format(super.EventStartDate);
-////		outFields[4] = String.valueOf(Duration);
-////		outFields[5] = String.valueOf(TotalUsage);
-////		outFields[7] = ZoneB;
-////		outFields[8] = NWGroup;
-//		//outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = String.valueOf(ServiceFee);
-//		//outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = String.valueOf(ServiceFeeId);
-//		outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = String.valueOf(ChargeFee);
-//		outFields[12] = String.valueOf(ChargeFeeId);
-//		outFields[13] = Lac;
-//		outFields[OrpRecord.Field.CellID.ordinal()] = CellId;
-//		outFields[15] = SubscriberUnbill;
-//		//outFields[16] = String.valueOf(BuId);
-//		//outFields[17] = String.valueOf(OldBuId);
-//		outFields[18] = String.valueOf(OfferCost);
-//		outFields[19] = String.valueOf(OfferFreeBlock);
-//		outFields[20] = String.valueOf(InternalCost);
-//		outFields[21] = String.valueOf(InternalFreeBlock);
-//		//outFields[OrpRecord.Field.a] = DialDigit;
-//		//outFields[23] = String.valueOf(CdrHeaderRecordId);
+		//		//Set output data
+		//		
+		//		outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = sdfInput.format(CreateTime);
+		//		outFields[3] = sdfInput.format(CDRNativeDate);
+		//		outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = sdfInput.format(super.EventStartDate);
+		////		outFields[4] = String.valueOf(Duration);
+		////		outFields[5] = String.valueOf(TotalUsage);
+		////		outFields[7] = ZoneB;
+		////		outFields[8] = NWGroup;
+		//		//outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = String.valueOf(ServiceFee);
+		//		//outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = String.valueOf(ServiceFeeId);
+		//		outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = String.valueOf(ChargeFee);
+		//		outFields[12] = String.valueOf(ChargeFeeId);
+		//		outFields[13] = Lac;
+		//		outFields[OrpRecord.Field.CellID.ordinal()] = CellId;
+		//		outFields[15] = SubscriberUnbill;
+		//		//outFields[16] = String.valueOf(BuId);
+		//		//outFields[17] = String.valueOf(OldBuId);
+		//		outFields[18] = String.valueOf(OfferCost);
+		//		outFields[19] = String.valueOf(OfferFreeBlock);
+		//		outFields[20] = String.valueOf(InternalCost);
+		//		outFields[21] = String.valueOf(InternalFreeBlock);
+		//		//outFields[OrpRecord.Field.a] = DialDigit;
+		//		//outFields[23] = String.valueOf(CdrHeaderRecordId);
 		//outFields[24] = String.valueOf(CdrSeqNum);
-//		outFields[25] = LocationNo;
-//		outFields[26] = "2"; // Rerated
-//		outFields[27] = UsageActivityId;
-//		//        outFields[28] = String.valueOf(PaymentItemId);
-//		outFields[OrpRecord.Field.MSCID.ordinal()] = MscId;
-//		outFields[OrpRecord.Field.UnitType.ordinal()] = UnitTypeId.toString();
-////		outFields[30] = TariffPlanId;
-//		outFields[31] = errMessage;
-		
-		
-		
+		//		outFields[25] = LocationNo;
+		//		outFields[26] = "2"; // Rerated
+		//		outFields[27] = UsageActivityId;
+		//		//        outFields[28] = String.valueOf(PaymentItemId);
+		//		outFields[OrpRecord.Field.MSCID.ordinal()] = MscId;
+		//		outFields[OrpRecord.Field.UnitType.ordinal()] = UnitTypeId.toString();
+		////		outFields[30] = TariffPlanId;
+		//		outFields[31] = errMessage;
+
 		tmpReassemble = new StringBuilder(1024);
 
 		NumberOfFields = outFields.length;
 
-
 		//for (i = 0; i < NumberOfFields; i++) 
-		for (i=0;i<NumberOfFields;i++)
+		for (i = 0; i < NumberOfFields; i++)
 		{
-			
-				
-				tmpReassemble.append(outFields[i]);
-				tmpReassemble.append("|");
-			
+
+			tmpReassemble.append(outFields[i]);
+			tmpReassemble.append("|");
+
 		}
 
+		String result = tmpReassemble.toString();
 
-		return tmpReassemble.toString();
+		LOG_PROCESSING.info("DONE: Create Output record: " + result);
+
+		return result;
 
 	}
 
