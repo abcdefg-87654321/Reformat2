@@ -55,6 +55,7 @@
 
 package ElcRate.adapter.file;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -95,8 +96,8 @@ import ElcRate.utils.PropertyUtils;
 
 /**
  * Please <a target='new' href=
- * 'http://www.open-rate.com/wiki/index.php?title=Flat_File_Output_Adapter'>click
- * here</a> to go to wiki page. <br>
+ * 'http://www.open-rate.com/wiki/index.php?title=Flat_File_Output_Adapter'>clic
+ * k here</a> to go to wiki page. <br>
  * Flat File Output Adapter. Writes to a file stream output, using transaction
  * aware handling.
  */
@@ -317,7 +318,7 @@ public abstract class FlatFileOutputAdapter extends
 			openErrFile(tmpFileNames.procErrorFileName);
 			outputStreamOpen = true;
 
-			//proOutputFileName = tmpFileNames.outputFileName;
+			// proOutputFileName = tmpFileNames.outputFileName;
 
 		}
 
@@ -325,7 +326,8 @@ public abstract class FlatFileOutputAdapter extends
 	}
 
 	private String getSeqFilePath() {
-		return "config/" + filePrefix + "sequence.txt";
+		// return "config/" + filePrefix + "sequence.txt";
+		return "config/" + "sequence.txt";
 	}
 
 	/**
@@ -346,7 +348,7 @@ public abstract class FlatFileOutputAdapter extends
 
 		// to create sequence for file
 		DecimalFormat df = new DecimalFormat("0000");
-		//System.out.println(writeToNew);
+		// System.out.println(writeToNew);
 
 		if (writeToNew) {
 			writeToNew = false;
@@ -354,7 +356,8 @@ public abstract class FlatFileOutputAdapter extends
 			try {
 				File source = new File(getSeqFilePath());
 				if (!source.exists()) {
-					PrintWriter out = new PrintWriter(new FileOutputStream(getSeqFilePath()));
+					PrintWriter out = new PrintWriter(new FileOutputStream(
+							getSeqFilePath()));
 					out.println(1);
 					out.println(1);
 					out.flush();
@@ -369,9 +372,11 @@ public abstract class FlatFileOutputAdapter extends
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			//System.out.println(fileSequence);
+			// System.out.println(fileSequence);
 
-			outputFileName = filePath + System.getProperty("file.separator") + "IPor." + (System.currentTimeMillis() / 1000) + ".slu999." + df.format(fileSequence) + ".bill";
+			outputFileName = filePath + System.getProperty("file.separator")
+					+ "IPor." + (System.currentTimeMillis() / 1000)
+					+ ".slu999." + df.format(fileSequence) + ".bill";
 			proOutputFileName = outputFileName + ".doing";
 
 			File directory = new File(filePath);
@@ -388,20 +393,27 @@ public abstract class FlatFileOutputAdapter extends
 					doing = true;
 
 					try {
+						
+
 						FileReader fr = new FileReader(file);
 						LineNumberReader lnr = new LineNumberReader(fr);
 
-						int linenumber = 0;
-
+						int linenumber = 1;
+						String k=lnr.readLine();
+						System.out.println(k.substring(37, 47));
+						String startSequenceCDRInString=k.substring(37, 47);
+						startSequenceCDR = Long.parseLong(startSequenceCDRInString);
+						
 						while (lnr.readLine() != null) {
 							linenumber++;
+							
+							
 						}
 						numRecord = linenumber;
 						lnr.close();
-						//System.out.println(file.getName());
+						
 						String timeInString = file.getName().substring(5, 15);
 						timeBegin = Long.parseLong(timeInString);
-						//System.out.println(timeInString);
 
 					} catch (FileNotFoundException e) {
 						// TODO Auto-generated catch block
@@ -477,7 +489,26 @@ public abstract class FlatFileOutputAdapter extends
 					validWriter.close();
 					numRecord++;
 
-					endSequenceCDR++;
+					timeEnd = System.currentTimeMillis() / 1000;
+
+					// replace needeed value in file header
+					RandomAccessFile raf = new RandomAccessFile(
+							proOutputFileName, "rw");
+					df = new DecimalFormat("0000000000");
+
+					raf.seek(48);
+					raf.writeBytes(df.format(endSequenceCDR));
+
+					raf.seek(70);
+					raf.writeBytes(df.format(timeEnd));
+
+					raf.seek(81);
+					raf.writeBytes(df.format(numRecord));
+
+					raf.close();
+					
+					// put the next sequence number 
+					endSequenceCDR = startSequenceCDR + numRecord;
 					if (endSequenceCDR > 9999999) {
 						endSequenceCDR = 1;
 					}
@@ -506,7 +537,7 @@ public abstract class FlatFileOutputAdapter extends
 
 			if ((file.length() > maxSize * 0.95 * 1024 * 1024)
 					|| (timeInterval > maxTime * 3600 * 0.95)
-					|| (numRecord == maxRecord)) {
+					|| (numRecord >= maxRecord)) {
 				try {
 					// replace needeed value in file header
 					RandomAccessFile raf = new RandomAccessFile(
@@ -526,8 +557,10 @@ public abstract class FlatFileOutputAdapter extends
 
 					raf.seek(81);
 					raf.writeBytes(df.format(numRecord));
-
+					
+				
 					raf.close();
+
 
 					// checksum the file
 					RandomAccessFile f = new RandomAccessFile(
@@ -544,9 +577,10 @@ public abstract class FlatFileOutputAdapter extends
 					f.seek(3);
 					f.write(sum);
 					f.close();
-
-					doing = false;
-
+					
+					
+					doing=false;
+					
 					// put the right input sequence for next file
 
 					fileSequence++;
@@ -557,6 +591,7 @@ public abstract class FlatFileOutputAdapter extends
 					if (endSequenceCDR > 9999999) {
 						endSequenceCDR = 1;
 					}
+					
 					PrintWriter out = new PrintWriter(getSeqFilePath());
 					out.println(fileSequence);
 					out.println(endSequenceCDR);
@@ -767,7 +802,7 @@ public abstract class FlatFileOutputAdapter extends
 		} else {
 			// Rename the file
 			f.renameTo(new File(getOutputName(transactionNumber)));
-			//f.renameTo(new File(proOutputFileName));
+			// f.renameTo(new File(proOutputFileName));
 		}
 
 		// rename the error file
