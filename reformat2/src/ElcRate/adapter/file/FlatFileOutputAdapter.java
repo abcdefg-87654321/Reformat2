@@ -55,7 +55,6 @@
 
 package ElcRate.adapter.file;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -71,15 +70,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Scanner;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import ElcRate.CommonConfig;
 import ElcRate.adapter.AbstractTransactionalOutputAdapter;
@@ -141,7 +131,6 @@ public abstract class FlatFileOutputAdapter extends
 	private final static String SERVICE_FILE_SUFFIX = "OutputFileSuffix";
 	private final static String SERVICE_DEL_EMPTY_OUT_FILE = "DeleteEmptyOutputFile";
 	private final static String SERVICE_SINGLE_OUTPUT = "SingleOutputFile";
-	// private final static String SERVICE_SINGLE_OUTPUT = "MultipleOutputFile";
 	private final static String SERVICE_ERR_PATH = "ErrFilePath";
 	private final static String SERVICE_ERR_PREFIX = "ErrFilePrefix";
 	private final static String SERVICE_ERR_SUFFIX = "ErrFileSuffix";
@@ -157,18 +146,34 @@ public abstract class FlatFileOutputAdapter extends
 
 	// final static String SERVICE_OUT_FILE_NAME = "outputFileName";
 	// final static String SERVICE_ERR_FILE_NAME = "ErrFileName";
+
+	/**
+	 * doing CDR file path
+	 */
 	private String proOutputFileName = null;
+	/**
+	 * CDR file path
+	 */
 	private String outputFileName = null;
-	//	static boolean writeToNew = true;
-	private static long beginCdrTime, endCdrTime, duration;
-	private static long recordCount = 0;
-	private static boolean existedDoingCdrFile = false;
 
-	private static long fileSeq = 1;
-	private static long startCdrSeq = 1;
-	private static long endCdrSeq = 1;
-	//	private static long recordCount = 1;
+	// FILE HEADER
+	private long beginCdrTime, endCdrTime;
+	private long recordCount = 0;
 
+	private boolean existedDoingCdrFile = false;
+
+	// FILE NAME
+	/**
+	 * File sequence, gia tri duoc ghi tren CDR file name
+	 */
+	private long fileSeq = 1;
+	private long startCdrSeq = 1;
+	/**
+	 * End CDR record sequence, gia tri duoc ghi tren File header
+	 */
+	private long endCdrSeq = 1;
+
+	// POLICY
 	protected double maxSize = 4; // in MB
 	protected long maxRecord = 10;
 	protected double maxTime = 2; // in hour
@@ -336,7 +341,7 @@ public abstract class FlatFileOutputAdapter extends
 	}
 
 	private String getSeqFilePath() {
-		return "config/" + filePrefix + "sequence.txt";
+		return "configData/" + filePrefix + "sequence.txt";
 		//		return "config/" + "sequence.txt";
 	}
 
@@ -382,21 +387,21 @@ public abstract class FlatFileOutputAdapter extends
 
 					endCdrTime = System.currentTimeMillis() / 1000;
 
-					//					// replace needeed value in file header
-					//					RandomAccessFile raf = new RandomAccessFile(
-					//							proOutputFileName, "rw");
-					//					DecimalFormat df10 = new DecimalFormat("0000000000");
-					//
-					//					raf.seek(48);
-					//					raf.writeBytes(df10.format(endCdrSeq));
-					//
-					//					raf.seek(70);
-					//					raf.writeBytes(df10.format(endCdrTime));
-					//
-					//					raf.seek(81);
-					//					raf.writeBytes(df10.format(recordCount));
-					//
-					//					raf.close();
+					// replace needeed value in file header
+					RandomAccessFile raf = new RandomAccessFile(
+							proOutputFileName, "rw");
+					DecimalFormat df10 = new DecimalFormat("0000000000");
+
+					raf.seek(48);
+					raf.writeBytes(df10.format(endCdrSeq));
+
+					raf.seek(70);
+					raf.writeBytes(df10.format(endCdrTime));
+
+					raf.seek(81);
+					raf.writeBytes(df10.format(recordCount));
+
+					raf.close();
 
 					// put the next sequence number 
 					endCdrSeq = startCdrSeq + recordCount;
@@ -476,11 +481,15 @@ public abstract class FlatFileOutputAdapter extends
 		}
 	}
 
+	/**
+	 * Kiem tra voi CDR hien tai da cham nguong maxRecord hoac maxTime hoac maxSize chua?
+	 * Neu da cham 1 trong cac nguong thi ghi lai File header
+	 */
 	private void checkPolicy() {
 
 		endCdrTime = System.currentTimeMillis() / 1000;
 
-		duration = (endCdrTime - beginCdrTime);
+		long duration = (endCdrTime - beginCdrTime);
 
 		boolean max = false;
 
@@ -518,19 +527,7 @@ public abstract class FlatFileOutputAdapter extends
 
 				raf.close();
 
-				// checksum the file
-				RandomAccessFile f = new RandomAccessFile(proOutputFileName, "rw");
-				byte[] bytes = new byte[(int) f.length()];
-				f.read(bytes);
-				byte sum = 0;
-
-				for (byte b : bytes) {
-					sum ^= b;
-				}
-
-				f.seek(3);
-				f.write(sum);
-				f.close();
+				checksumDoingCdrFile(proOutputFileName);
 
 				// put the right input sequence for next file
 
@@ -565,6 +562,22 @@ public abstract class FlatFileOutputAdapter extends
 
 	}
 
+	private void checksumDoingCdrFile(String filePath) throws IOException {
+		// checksum the file
+		RandomAccessFile f = new RandomAccessFile(filePath, "rw");
+		byte[] bytes = new byte[(int) f.length()];
+		f.read(bytes);
+		byte sum = 0;
+
+		for (byte b : bytes) {
+			sum ^= b;
+		}
+
+		f.seek(3);
+		f.write(sum);
+		f.close();
+	}
+
 	/**
 	 * Doc fileSeq + endCdrSeq tu file
 	 */
@@ -597,6 +610,9 @@ public abstract class FlatFileOutputAdapter extends
 		}
 	}
 
+	/**
+	 * Tao ra file doing, ghi File header len file doing nay
+	 */
 	private void createDoingCdrFile() {
 		// to create sequence for file
 		DecimalFormat df4 = new DecimalFormat("0000");
@@ -640,8 +656,7 @@ public abstract class FlatFileOutputAdapter extends
 			validWriter.flush();
 			validWriter.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			this.getExceptionHandler().reportException(new ProcessingException(e, getSymbolicName()));
 		}
 	}
 

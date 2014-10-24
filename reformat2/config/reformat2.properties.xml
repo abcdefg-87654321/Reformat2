@@ -25,6 +25,36 @@
 			<!-- <HaltOnException>True</HaltOnException> -->
 			<PipelineType>Batch</PipelineType>
 		</Reformat2Pipe_3>
+		<Reformat2Pipe_4>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_4>
+		<Reformat2Pipe_5>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_5>
+		<Reformat2Pipe_6>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_6>
+		<Reformat2Pipe_7>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_7>
+		<Reformat2Pipe_8>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_8>
+		<Reformat2Pipe_9>
+			<Active>True</Active>
+			<!-- <HaltOnException>True</HaltOnException> -->
+			<PipelineType>Batch</PipelineType>
+		</Reformat2Pipe_9>
 	</PipelineList>
 	
 	<OnlyAuditCoreClasses>
@@ -442,6 +472,624 @@
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_3>
+	
+		<Reformat2Pipe_4>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 4
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 4)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 4)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 4)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 4)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 4)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 4)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>4.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>4.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_4>
+	
+		<Reformat2Pipe_5>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 5
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 5)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 5)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 5)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 5)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 5)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 5)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>5.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>5.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_5>
+	
+	<Reformat2Pipe_6>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 6
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 6)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 6)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 6)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 6)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 6)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 6)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>6.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>6.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_6>
+	
+	<Reformat2Pipe_7>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 7
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 7)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 7)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 7)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 7)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 7)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 7)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>7.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>7.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_7>
+	
+	<Reformat2Pipe_8>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 8
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 8)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 8)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 8)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 8)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 8)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 8)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>8.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>8.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_8>
+	
+	<Reformat2Pipe_9>
+		<InputAdapter>
+			<DBInpAdapter>
+				<ClassName>eonerate.reformat2.data.DBInputAdapter</ClassName>
+				<BatchSize>10000</BatchSize>
+				<DataSource>eOneRateDB</DataSource>
+				<ValidateStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE    DATA_PART = 9
+				</ValidateStatement>
+				<RecordCountStatement>
+					SELECT COUNT (1)
+					  FROM VNP_DATA.HOT_RATED_CDR_DEV
+					 WHERE     (   DATA_PART = 9)
+						   AND RERATE_FLAG = 0
+				</RecordCountStatement>
+				<InitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 1
+					 WHERE     (   DATA_PART = 9)
+						   AND ROWID IN
+								  (SELECT IDS
+									 FROM (  SELECT ROWID IDS
+											   FROM VNP_DATA.HOT_RATED_CDR_DEV
+											  WHERE     (   DATA_PART = 9)
+													AND RERATE_FLAG = 0
+										   ORDER BY CDR_START_TIME)
+									WHERE ROWNUM BETWEEN 1 AND 10000)
+				</InitStatement>
+				<RecordSelectStatement>
+					  SELECT A_NUMBER,
+							 CDR_TYPE,
+							 TO_CHAR (CREATED_TIME, 'DD/MM/YYYY HH24:MI:SS') CREATED_TIME,
+							 TO_CHAR (CDR_START_TIME, 'DD/MM/YYYY HH24:MI:SS') CDR_START_TIME,
+							 DURATION,
+							 TOTAL_USAGE,
+							 B_NUMBER,
+							 B_ZONE,
+							 NW_GROUP,
+							 SERVICE_FEE,
+							 SERVICE_FEE_ID,
+							 CHARGE_FEE,
+							 CHARGE_FEE_ID,
+							 LAC,
+							 CELL_ID,
+							 SUBSCRIBER_UNBILL,
+							 BU_ID,
+							 OLD_BU_ID,
+							 OFFER_COST,
+							 OFFER_FREE_BLOCK,
+							 INTERNAL_COST,
+							 INTERNAL_FREE_BLOCK,
+							 DIAL_DIGIT,
+							 CDR_RECORD_HEADER_ID,
+							 CDR_SEQUENCE_NUMBER,
+							 LOCATION_NO,
+							 RERATE_FLAG,
+							 AUT_FINAL_ID,
+							 MSC_ID,
+							 UNIT_TYPE_ID,
+							 TARIFF_PLAN_ID,
+							 MAP_ID,
+							 DATA_PART
+						FROM VNP_DATA.HOT_RATED_CDR_DEV
+					   WHERE     (   DATA_PART = 9)
+							 AND RERATE_FLAG = 1
+					ORDER BY CDR_START_TIME
+				</RecordSelectStatement>
+				<CommitStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 2
+					 WHERE     (   DATA_PART = 9)
+						   AND RERATE_FLAG = 1
+				</CommitStatement>
+				<RollbackStatement>
+					UPDATE VNP_DATA.HOT_RATED_CDR_DEV
+					   SET RERATE_FLAG = 3
+					 WHERE     (   DATA_PART = 9)
+						   AND RERATE_FLAG = 1
+				</RollbackStatement>
+			</DBInpAdapter>
+		</InputAdapter>
+		
+		<Process>
+		</Process>
+		
+		<OutputAdapter>
+			<SOutAdapter>
+				<ClassName>eonerate.reformat2.data.FileOutputAdapter</ClassName>
+				<OutputName>default</OutputName>
+				<BatchSize>5000</BatchSize>
+				<MaxSleep>50</MaxSleep>
+				<OutputFilePath>data</OutputFilePath>
+				<OutputFilePrefix>9.</OutputFilePrefix>
+				<OutputFileSuffix>.bill</OutputFileSuffix>
+				<ErrFilePath>data</ErrFilePath>
+				<ErrFilePrefix>9.</ErrFilePrefix>
+				<ErrFileSuffix>.err</ErrFileSuffix>
+			</SOutAdapter>
+		</OutputAdapter>
+	</Reformat2Pipe_9>
 	
 	<Resource>
 		<DataSourceFactory>
