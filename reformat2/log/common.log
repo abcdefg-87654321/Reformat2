@@ -16671,3 +16671,258 @@ ElcRate.exception.InitializationException: ElcRateSocket.getServerSocket(): Coul
 2014-10-24 10:30:02,319 TransactionManager.java       [ 267] INFO  - Statistics: Records  <16>
 2014-10-24 10:30:02,319 TransactionManager.java       [ 268] INFO  -             Duration <103> ms
 2014-10-24 10:30:02,319 TransactionManager.java       [ 270] INFO  -             Speed    <155> records /sec
+2014-10-24 16:59:19,144 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-24 16:59:19,148 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-24 16:59:19,343 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-24 16:59:21,363 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-24 16:59:21,373 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-24 16:59:21,373 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-24 16:59:21,373 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-24 16:59:21,384 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-24 16:59:21,394 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-24 16:59:21,394 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 16:59:21,394 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 16:59:21,404 ElcRate.java                  [ 705] FATAL - InitializationException thrown. Message <Unexpected exception configuring pipeline <Reformat2Pipe_0>, message <null>>
+ElcRate.exception.InitializationException: Unexpected exception configuring pipeline <Reformat2Pipe_0>, message <null>
+	at ElcRate.Pipeline.ConfigurePipeline(Pipeline.java:369)
+	at ElcRate.Pipeline.init(Pipeline.java:228)
+	at ElcRate.ElcRate.createPipeline(ElcRate.java:758)
+	at ElcRate.ElcRate.createApplication(ElcRate.java:486)
+	at ElcRate.ElcRate.main(ElcRate.java:289)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.checkExistDoingFile(FlatFileOutputAdapter.java:428)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.<init>(FlatFileOutputAdapter.java:200)
+	at eonerate.reformat2.data.FileOutputAdapter.<init>(FileOutputAdapter.java:110)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at ElcRate.Pipeline.getBatchOutputAdapterList(Pipeline.java:618)
+	at ElcRate.Pipeline.ConfigurePipeline(Pipeline.java:341)
+	... 4 more
+2014-10-24 16:59:21,444 ElcRate.java                  [ 721] FATAL - InitializationException thrown. Message <Unexpected exception configuring pipeline <Reformat2Pipe_0>, message <null>>
+2014-10-24 16:59:21,444 ElcRate.java                  [ 535] INFO  - :::: ElcRate Stopped ::::
+2014-10-24 16:59:21,444 ElcRateSocket.java            [ 191] INFO  - Closing <Listener>
+2014-10-24 17:01:33,615 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-24 17:01:33,625 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-24 17:01:33,755 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-24 17:01:35,549 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-24 17:01:35,549 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-24 17:01:35,559 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-24 17:01:35,559 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-24 17:01:35,559 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-24 17:01:35,571 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-24 17:01:35,571 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:01:35,571 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:01:35,661 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-24 17:01:35,661 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-24 17:01:35,661 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:01:35,661 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:01:35,671 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-24 17:01:35,671 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-24 17:01:35,671 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:01:35,671 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:01:35,691 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-24 17:01:35,691 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-24 17:01:35,691 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:01:35,691 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:04:16,930 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-24 17:04:16,930 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-24 17:04:17,040 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-24 17:04:19,002 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-24 17:04:19,002 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-24 17:04:19,012 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-24 17:04:19,012 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-24 17:04:19,012 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-24 17:04:19,023 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-24 17:04:19,033 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:04:19,033 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:04:19,053 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-24 17:04:19,053 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-24 17:04:19,053 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:04:19,053 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:04:19,063 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-24 17:04:19,063 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-24 17:04:19,063 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:04:19,063 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:04:19,073 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-24 17:04:19,073 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-24 17:04:19,073 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:04:19,073 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:05:44,844 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:05:44,977 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_0>
+2014-10-24 17:05:44,977 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_0>
+2014-10-24 17:05:45,019 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:05:45,066 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_3>
+2014-10-24 17:05:45,067 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_3>
+2014-10-24 17:05:45,091 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|0
+2014-10-24 17:05:45,091 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|3
+2014-10-24 17:05:45,107 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:05:45,156 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|3
+2014-10-24 17:05:45,158 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|0
+2014-10-24 17:05:45,159 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|0
+2014-10-24 17:05:45,160 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|0
+2014-10-24 17:05:45,161 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|0
+2014-10-24 17:05:45,163 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|3
+2014-10-24 17:05:45,165 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|3
+2014-10-24 17:05:45,166 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|3
+2014-10-24 17:05:45,170 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_1>
+2014-10-24 17:05:45,170 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_1>
+2014-10-24 17:05:45,171 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:05:45,171 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|1
+2014-10-24 17:05:45,172 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|1
+2014-10-24 17:05:45,173 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|1
+2014-10-24 17:05:45,173 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|1
+2014-10-24 17:05:45,174 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|1
+2014-10-24 17:05:45,271 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_2>
+2014-10-24 17:05:45,272 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_2>
+2014-10-24 17:05:45,272 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|2
+2014-10-24 17:05:45,273 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|2
+2014-10-24 17:05:45,274 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|2
+2014-10-24 17:05:45,275 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|2
+2014-10-24 17:05:45,275 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|2
+2014-10-24 17:05:45,288 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000001|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,291 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000002|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,293 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000003|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,294 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000004|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,295 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000005|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,297 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000006|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,298 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000007|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,300 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000008|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,300 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000327|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,303 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000328|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,305 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <138> ms
+2014-10-24 17:05:45,330 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000330|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,332 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000331|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,333 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000332|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,335 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000333|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,337 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <61> ms
+2014-10-24 17:05:45,350 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000334|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,357 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000335|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,359 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000336|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,360 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000337|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,362 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <81> ms
+2014-10-24 17:05:45,307 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000329|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,366 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000338|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:05:45,369 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <202> ms
+2014-10-24 17:05:45,370 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-24 17:05:45,370 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-24 17:05:45,370 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:05:45,370 TransactionManager.java       [ 268] INFO  -             Duration <393> ms
+2014-10-24 17:05:45,370 TransactionManager.java       [ 270] INFO  -             Speed    <12> records /sec
+2014-10-24 17:05:45,371 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-24 17:05:45,371 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-24 17:05:45,371 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:05:45,371 TransactionManager.java       [ 268] INFO  -             Duration <201> ms
+2014-10-24 17:05:45,371 TransactionManager.java       [ 270] INFO  -             Speed    <24> records /sec
+2014-10-24 17:05:45,378 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-24 17:05:45,379 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-24 17:05:45,379 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:05:45,379 TransactionManager.java       [ 268] INFO  -             Duration <107> ms
+2014-10-24 17:05:45,379 TransactionManager.java       [ 270] INFO  -             Speed    <46> records /sec
+2014-10-24 17:05:45,381 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-24 17:05:45,381 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-24 17:05:45,381 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:05:45,381 TransactionManager.java       [ 268] INFO  -             Duration <315> ms
+2014-10-24 17:05:45,381 TransactionManager.java       [ 270] INFO  -             Speed    <15> records /sec
+2014-10-24 17:22:18,118 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-24 17:22:18,123 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-24 17:22:18,251 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))>
+2014-10-24 17:22:20,023 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-24 17:22:20,029 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-24 17:22:20,036 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-24 17:22:20,036 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-24 17:22:20,042 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-24 17:22:20,053 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-24 17:22:20,054 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:22:20,055 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:22:20,073 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-24 17:22:20,073 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-24 17:22:20,073 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:22:20,074 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:22:20,096 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-24 17:22:20,098 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-24 17:22:20,098 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:22:20,099 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:22:20,103 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-24 17:22:20,104 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-24 17:22:20,104 TransactionManager.java       [ 360] INFO  - Request Start for Transaction manager.
+2014-10-24 17:22:20,104 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-24 17:22:30,292 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:22:30,295 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:22:30,297 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:22:30,325 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-24 17:22:30,436 TransactionManager.java       [ 228] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_2>
+2014-10-24 17:22:30,436 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_2>
+2014-10-24 17:22:30,448 TransactionManager.java       [ 228] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_1>
+2014-10-24 17:22:30,449 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_1>
+2014-10-24 17:22:30,538 TransactionManager.java       [ 228] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_3>
+2014-10-24 17:22:30,538 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_3>
+2014-10-24 17:22:30,565 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|1
+2014-10-24 17:22:30,565 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|2
+2014-10-24 17:22:30,683 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|2
+2014-10-24 17:22:30,688 TransactionManager.java       [ 228] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_0>
+2014-10-24 17:22:30,688 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_0>
+2014-10-24 17:22:30,689 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|0
+2014-10-24 17:22:30,689 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|0
+2014-10-24 17:22:30,690 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|2
+2014-10-24 17:22:30,691 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|2
+2014-10-24 17:22:30,693 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841472|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|2
+2014-10-24 17:22:30,565 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:25:55|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|410|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1432|3
+2014-10-24 17:22:30,690 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|0
+2014-10-24 17:22:30,697 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|0
+2014-10-24 17:22:30,698 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841470|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|0
+2014-10-24 17:22:30,682 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|1
+2014-10-24 17:22:30,700 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|1
+2014-10-24 17:22:30,701 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|1
+2014-10-24 17:22:30,702 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841471|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|1
+2014-10-24 17:22:30,698 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:26:13|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|411|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1433|3
+2014-10-24 17:22:30,706 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:29:45|0|0|973794213|null|null|0|0|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|412|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1434|3
+2014-10-24 17:22:30,708 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:33:42|108|108|973794213|null|null|1603.28|51|0|0|452021152931079|84910100403|null|0|0|0|0|0|0|0084973794213|117421|413|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1435|3
+2014-10-24 17:22:30,709 RateRecord.java               [ 307] INFO  - TODO: Map InputRecord to object: 84943841473|1|17/10/2014 16:26:37|16/10/2014 10:36:05|294|294|973794213|null|null|4364.45|51|0|0|452021152931073|84910100404|null|0|0|0|0|0|0|0084973794213|117421|414|10003@@@@@@@@@@@|1|30225|8491020466|2|30071|1436|3
+2014-10-24 17:22:30,713 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000327|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,777 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000328|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,778 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000330|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,780 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000329|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,785 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000334|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,786 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000335|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,787 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000336|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841472|973794213|84943841472|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,783 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000333|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,782 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000332|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,780 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000331|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,791 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000337|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,791 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000338|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,825 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000340|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,825 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000341|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,792 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000339|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,827 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000342|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841471|973794213|84943841471|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,828 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000343|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,828 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <119> ms
+2014-10-24 17:22:30,829 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000344|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841473|973794213|84943841473|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,831 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <117> ms
+2014-10-24 17:22:30,834 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <134> ms
+2014-10-24 17:22:30,836 TransactionManager.java       [ 265] INFO  - Transaction <3> closed
+2014-10-24 17:22:30,836 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-24 17:22:30,836 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:22:30,836 TransactionManager.java       [ 268] INFO  -             Duration <298> ms
+2014-10-24 17:22:30,836 TransactionManager.java       [ 270] INFO  -             Speed    <16> records /sec
+2014-10-24 17:22:30,837 TransactionManager.java       [ 265] INFO  - Transaction <1> closed
+2014-10-24 17:22:30,837 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-24 17:22:30,837 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:22:30,837 TransactionManager.java       [ 268] INFO  -             Duration <389> ms
+2014-10-24 17:22:30,837 TransactionManager.java       [ 270] INFO  -             Speed    <12> records /sec
+2014-10-24 17:22:30,834 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000345|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,839 RateRecord.java               [1224] INFO  - DONE: Create Output record: VOI|0000000346|0|0|OR_RSLT_UNPROCESSED(0)|||slu999|1410393600|1410393601|1410393620|84943841470|973794213|84943841470|1|84102||1|0|2|10477|30012|||16|4520200003500100|0|0.000000|420|2||0.000000||||||||||||||||||||||||4520200003500100|-1|-1|52|0|||||-|O|||1|||||||||||||||||||||||||||||||||||||||||||||||||||||234|156|161|164|1||||973794213|973794213|0|1||||||
+2014-10-24 17:22:30,840 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <137> ms
+2014-10-24 17:22:30,878 TransactionManager.java       [ 265] INFO  - Transaction <2> closed
+2014-10-24 17:22:30,878 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-24 17:22:30,878 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:22:30,878 TransactionManager.java       [ 268] INFO  -             Duration <442> ms
+2014-10-24 17:22:30,878 TransactionManager.java       [ 270] INFO  -             Speed    <11> records /sec
+2014-10-24 17:22:30,883 TransactionManager.java       [ 265] INFO  - Transaction <4> closed
+2014-10-24 17:22:30,883 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-24 17:22:30,883 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-24 17:22:30,883 TransactionManager.java       [ 268] INFO  -             Duration <195> ms
+2014-10-24 17:22:30,883 TransactionManager.java       [ 270] INFO  -             Speed    <25> records /sec

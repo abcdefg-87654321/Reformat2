@@ -286,3 +286,23 @@ ElcRate.exception.InitializationException: ElcRateSocket.getServerSocket(): Coul
 	at ElcRate.ElcRate.startupFramework(ElcRate.java:611)
 	at ElcRate.ElcRate.createApplication(ElcRate.java:472)
 	at ElcRate.ElcRate.main(ElcRate.java:289)
+2014-10-24 16:59:21,404 FATAL - InitializationException thrown. Message <Unexpected exception configuring pipeline <Reformat2Pipe_0>, message <null>>
+ElcRate.exception.InitializationException: Unexpected exception configuring pipeline <Reformat2Pipe_0>, message <null>
+	at ElcRate.Pipeline.ConfigurePipeline(Pipeline.java:369)
+	at ElcRate.Pipeline.init(Pipeline.java:228)
+	at ElcRate.ElcRate.createPipeline(ElcRate.java:758)
+	at ElcRate.ElcRate.createApplication(ElcRate.java:486)
+	at ElcRate.ElcRate.main(ElcRate.java:289)
+Caused by: java.lang.NullPointerException
+	at java.io.File.<init>(Unknown Source)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.checkExistDoingFile(FlatFileOutputAdapter.java:428)
+	at ElcRate.adapter.file.FlatFileOutputAdapter.<init>(FlatFileOutputAdapter.java:200)
+	at eonerate.reformat2.data.FileOutputAdapter.<init>(FileOutputAdapter.java:110)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at java.lang.Class.newInstance(Unknown Source)
+	at ElcRate.Pipeline.getBatchOutputAdapterList(Pipeline.java:618)
+	at ElcRate.Pipeline.ConfigurePipeline(Pipeline.java:341)
+	... 4 more

@@ -149,19 +149,25 @@ public abstract class FlatFileOutputAdapter extends
 	private static final String SERVICE_PROCPREFIX = "ProcessingPrefix";
 	private static final String DEFAULT_PROCPREFIX = "tmp";
 
+	private static final long ORI_FILE_SEQ = 1;
+
+	private static final long ORI_END_CDR_SEQ = 1;
+
+	private static final String TEMP_HOST_NAME = "slu999";
+
 	// final static String SERVICE_OUT_FILE_NAME = "outputFileName";
 	// final static String SERVICE_ERR_FILE_NAME = "ErrFileName";
 	private String proOutputFileName = null;
 	private String outputFileName = null;
-	static boolean writeToNew = true;
-	static long timeBegin, timeEnd, timeInterval;
-	static long numRecord = 0;
-	static boolean doing = false;
+	//	static boolean writeToNew = true;
+	private static long beginCdrTime, endCdrTime, duration;
+	private static long recordCount = 0;
+	private static boolean existedDoingCdrFile = false;
 
-	static long fileSequence = 1;
-	static long startSequenceCDR = 1;
-	static long endSequenceCDR = 1;
-	static long recordCount = 1;
+	private static long fileSeq = 1;
+	private static long startCdrSeq = 1;
+	private static long endCdrSeq = 1;
+	//	private static long recordCount = 1;
 
 	protected double maxSize = 4; // in MB
 	protected long maxRecord = 10;
@@ -262,6 +268,10 @@ public abstract class FlatFileOutputAdapter extends
 
 		// create the structure for storing filenames
 		CurrentFileNames = new HashMap<>(10);
+
+		// !!!
+		readSeqVariables();
+		checkExistDoingFile();
 	}
 
 	/**
@@ -326,8 +336,8 @@ public abstract class FlatFileOutputAdapter extends
 	}
 
 	private String getSeqFilePath() {
-		// return "config/" + filePrefix + "sequence.txt";
-		return "config/" + "sequence.txt";
+		return "config/" + filePrefix + "sequence.txt";
+		//		return "config/" + "sequence.txt";
 	}
 
 	/**
@@ -346,127 +356,8 @@ public abstract class FlatFileOutputAdapter extends
 		Iterator<IRecord> outRecIter;
 		outRecCol = procValidRecord(r);
 
-		// to create sequence for file
-		DecimalFormat df = new DecimalFormat("0000");
-		// System.out.println(writeToNew);
-
-		if (writeToNew) {
-			writeToNew = false;
-
-			try {
-				File source = new File(getSeqFilePath());
-				if (!source.exists()) {
-					PrintWriter out = new PrintWriter(new FileOutputStream(
-							getSeqFilePath()));
-					out.println(1);
-					out.println(1);
-					out.flush();
-					out.close();
-				}
-
-				Scanner scanner = new Scanner(source);
-				fileSequence = scanner.nextLong();
-				startSequenceCDR = scanner.nextLong();
-				scanner.close();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			// System.out.println(fileSequence);
-
-			outputFileName = filePath + System.getProperty("file.separator")
-					+ "IPor." + (System.currentTimeMillis() / 1000)
-					+ ".slu999." + df.format(fileSequence) + ".bill";
-			proOutputFileName = outputFileName + ".doing";
-
-			File directory = new File(filePath);
-
-			// get all the files from a directory
-			File[] fList = directory.listFiles();
-			for (File file : fList) {
-				String str = file.getAbsolutePath();
-
-				int index = str.indexOf("doing");
-				if (index > 1) {
-					proOutputFileName = str;
-					outputFileName = str.substring(0, index);
-					doing = true;
-
-					try {
-						
-
-						FileReader fr = new FileReader(file);
-						LineNumberReader lnr = new LineNumberReader(fr);
-
-						int linenumber = 1;
-						String k=lnr.readLine();
-						System.out.println(k.substring(37, 47));
-						String startSequenceCDRInString=k.substring(37, 47);
-						startSequenceCDR = Long.parseLong(startSequenceCDRInString);
-						
-						while (lnr.readLine() != null) {
-							linenumber++;
-							
-							
-						}
-						numRecord = linenumber;
-						lnr.close();
-						
-						String timeInString = file.getName().substring(5, 15);
-						timeBegin = Long.parseLong(timeInString);
-
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-
-					}
-
-				}
-
-			}
-
-			// put the header for the file
-			if (!doing) {
-				timeBegin = System.currentTimeMillis() / 1000;
-				// append the header of the file to StringBuilder
-				StringBuilder fileHeader = new StringBuilder(1024);
-
-				endSequenceCDR = startSequenceCDR;
-				timeBegin = System.currentTimeMillis() / 1000;
-
-				String hostName;
-				hostName = "slu999";
-				fileHeader.append("ORH");
-				fileHeader.append("\0");
-				fileHeader.append(hostName);
-				for (int i = 0; i < 33 - hostName.length(); i++) {
-					fileHeader.append("\0");
-				}
-
-				df = new DecimalFormat("0000000000");
-
-				fileHeader.append(df.format(startSequenceCDR) + "\0");
-				fileHeader.append(df.format(startSequenceCDR) + "\0");
-				fileHeader.append(df.format(timeBegin) + "\0");
-				fileHeader.append(df.format(timeBegin) + "\0");
-				fileHeader.append(df.format(recordCount) + "\0");
-
-				try {
-					File file = new File(proOutputFileName);
-					FileWriter fwriter = new FileWriter(file, true);
-					validWriter = new BufferedWriter(fwriter, BUF_SIZE);
-					validWriter.write(fileHeader.toString());
-					validWriter.flush();
-					validWriter.close();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-
+		if (!existedDoingCdrFile) {
+			createDoingCdrFile();
 		}
 
 		// Null return means "do not bother to process"
@@ -487,137 +378,271 @@ public abstract class FlatFileOutputAdapter extends
 					validWriter.newLine();
 					validWriter.flush();
 					validWriter.close();
-					numRecord++;
+					recordCount++;
 
-					timeEnd = System.currentTimeMillis() / 1000;
+					endCdrTime = System.currentTimeMillis() / 1000;
 
-					// replace needeed value in file header
-					RandomAccessFile raf = new RandomAccessFile(
-							proOutputFileName, "rw");
-					df = new DecimalFormat("0000000000");
+					//					// replace needeed value in file header
+					//					RandomAccessFile raf = new RandomAccessFile(
+					//							proOutputFileName, "rw");
+					//					DecimalFormat df10 = new DecimalFormat("0000000000");
+					//
+					//					raf.seek(48);
+					//					raf.writeBytes(df10.format(endCdrSeq));
+					//
+					//					raf.seek(70);
+					//					raf.writeBytes(df10.format(endCdrTime));
+					//
+					//					raf.seek(81);
+					//					raf.writeBytes(df10.format(recordCount));
+					//
+					//					raf.close();
 
-					raf.seek(48);
-					raf.writeBytes(df.format(endSequenceCDR));
-
-					raf.seek(70);
-					raf.writeBytes(df.format(timeEnd));
-
-					raf.seek(81);
-					raf.writeBytes(df.format(numRecord));
-
-					raf.close();
-					
 					// put the next sequence number 
-					endSequenceCDR = startSequenceCDR + numRecord;
-					if (endSequenceCDR > 9999999) {
-						endSequenceCDR = 1;
+					endCdrSeq = startCdrSeq + recordCount;
+					if (endCdrSeq > 9999999) {
+						endCdrSeq = 1;
 					}
 					PrintWriter out = new PrintWriter(getSeqFilePath());
-					out.println(fileSequence);
-					out.println(endSequenceCDR);
+					out.println(fileSeq);
+					out.println(endCdrSeq);
 
 					out.flush();
 					out.close();
 
 				} catch (IOException ioex) {
-					this.getExceptionHandler().reportException(
-							new ProcessingException(ioex, getSymbolicName()));
+					this.getExceptionHandler().reportException(new ProcessingException(ioex, getSymbolicName()));
 				} catch (Exception ex) {
-					this.getExceptionHandler().reportException(
-							new ProcessingException(ex, getSymbolicName()));
+					this.getExceptionHandler().reportException(new ProcessingException(ex, getSymbolicName()));
 				}
+
+				checkPolicy();
 			}
 		}
 
-		if (!writeToNew) {
-			File file = new File(proOutputFileName);
-			timeEnd = System.currentTimeMillis() / 1000;
+		return r;
+	}
 
-			timeInterval = (timeEnd - timeBegin);
+	private void checkExistDoingFile() {
+		File directory = new File(filePath);
 
-			if ((file.length() > maxSize * 0.95 * 1024 * 1024)
-					|| (timeInterval > maxTime * 3600 * 0.95)
-					|| (numRecord >= maxRecord)) {
-				try {
-					// replace needeed value in file header
-					RandomAccessFile raf = new RandomAccessFile(
-							proOutputFileName, "rw");
-					df = new DecimalFormat("0000000000");
-					endSequenceCDR = startSequenceCDR + numRecord - 1;
+		// get all the files from a directory
+		File[] fList = directory.listFiles();
+		for (File file : fList) {
+			String str = file.getAbsolutePath();
 
-					if (endSequenceCDR > 9999999) {
-						endSequenceCDR = endSequenceCDR - 9999999;
+			if (str.indexOf(File.separator + filePrefix) >= 0) {
+				int index = str.indexOf("doing");
+				if (index > 1) {
+					proOutputFileName = str;
+					outputFileName = str.substring(0, index);
+					existedDoingCdrFile = true;
+
+					try {
+						FileReader fr = new FileReader(file);
+						LineNumberReader lnr = new LineNumberReader(fr);
+
+						int linenumber = 1;
+						String k = lnr.readLine();
+
+						//							System.out.println(k.substring(37, 47));
+						String startSequenceCDRInString = k.substring(37, 47);
+
+						startCdrSeq = Long.parseLong(startSequenceCDRInString);
+
+						while (lnr.readLine() != null) {
+							linenumber++;
+						}
+
+						if (file.length() > 100) {
+							recordCount = linenumber;
+						} else {
+							recordCount = 0;
+						}
+
+						lnr.close();
+
+						String timeInString = file.getName().substring(5, 15);
+						beginCdrTime = Long.parseLong(timeInString);
+
+						checkPolicy();
+
+						break;
+					} catch (Exception ex) {
+						this.getExceptionHandler().reportException(new ProcessingException(ex, getSymbolicName()));
 					}
-
-					raf.seek(48);
-					raf.writeBytes(df.format(endSequenceCDR));
-
-					raf.seek(70);
-					raf.writeBytes(df.format(timeEnd));
-
-					raf.seek(81);
-					raf.writeBytes(df.format(numRecord));
-					
-				
-					raf.close();
-
-
-					// checksum the file
-					RandomAccessFile f = new RandomAccessFile(
-							proOutputFileName, "rw");
-					byte[] bytes = new byte[(int) f.length()];
-					f.read(bytes);
-					byte sum = 0;
-
-					for (byte b : bytes) {
-
-						sum ^= b;
-
-					}
-					f.seek(3);
-					f.write(sum);
-					f.close();
-					
-					
-					doing=false;
-					
-					// put the right input sequence for next file
-
-					fileSequence++;
-					endSequenceCDR++;
-					if (fileSequence > 9999) {
-						fileSequence = 1;
-					}
-					if (endSequenceCDR > 9999999) {
-						endSequenceCDR = 1;
-					}
-					
-					PrintWriter out = new PrintWriter(getSeqFilePath());
-					out.println(fileSequence);
-					out.println(endSequenceCDR);
-
-					out.flush();
-					out.close();
-				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
 				}
+			}
+		}
+	}
+
+	private void checkPolicy() {
+
+		endCdrTime = System.currentTimeMillis() / 1000;
+
+		duration = (endCdrTime - beginCdrTime);
+
+		boolean max = false;
+
+		if (recordCount >= maxRecord || duration > maxTime * 3600) {
+			max = true;
+		}
+
+		if (!max) {
+			File file = new File(proOutputFileName);
+
+			if (file.length() > maxSize * 1024 * 1024) {
+				max = true;
+			}
+		}
+
+		if (max) {
+			try {
+				// replace needeed value in file header
+				RandomAccessFile raf = new RandomAccessFile(proOutputFileName, "rw");
+				DecimalFormat df10 = new DecimalFormat("0000000000");
+				endCdrSeq = startCdrSeq + recordCount - 1;
+
+				if (endCdrSeq > 9999999) {
+					endCdrSeq = endCdrSeq - 9999999;
+				}
+
+				raf.seek(48);
+				raf.writeBytes(df10.format(endCdrSeq));
+
+				raf.seek(70);
+				raf.writeBytes(df10.format(endCdrTime));
+
+				raf.seek(81);
+				raf.writeBytes(df10.format(recordCount));
+
+				raf.close();
+
+				// checksum the file
+				RandomAccessFile f = new RandomAccessFile(proOutputFileName, "rw");
+				byte[] bytes = new byte[(int) f.length()];
+				f.read(bytes);
+				byte sum = 0;
+
+				for (byte b : bytes) {
+					sum ^= b;
+				}
+
+				f.seek(3);
+				f.write(sum);
+				f.close();
+
+				// put the right input sequence for next file
+
+				fileSeq++;
+				endCdrSeq++;
+				if (fileSeq > 9999) {
+					fileSeq = 1;
+				}
+				if (endCdrSeq > 9999999) {
+					endCdrSeq = 1;
+				}
+
+				PrintWriter out = new PrintWriter(getSeqFilePath());
+				out.println(fileSeq);
+				out.println(endCdrSeq);
+
+				out.flush();
+				out.close();
 
 				// rename the file
 				File oldFile = new File(proOutputFileName);
 				File newFile = new File(outputFileName);
 				oldFile.renameTo(newFile);
 
-				writeToNew = true;
-				numRecord = 0;
+				existedDoingCdrFile = false;
+			} catch (FileNotFoundException e) {
+				this.getExceptionHandler().reportException(new ProcessingException(e, getSymbolicName()));
+			} catch (IOException e) {
+				this.getExceptionHandler().reportException(new ProcessingException(e, getSymbolicName()));
 			}
-
 		}
 
-		return r;
+	}
+
+	/**
+	 * Doc fileSeq + endCdrSeq tu file
+	 */
+	private void readSeqVariables() {
+		try {
+			File source = new File(getSeqFilePath());
+
+			if (!source.exists()) {
+				PrintWriter out = new PrintWriter(new FileOutputStream(getSeqFilePath()));
+				//					out.println(1);
+				out.println(ORI_FILE_SEQ);
+				//					out.println(1);
+				out.println(ORI_END_CDR_SEQ);
+				out.flush();
+				out.close();
+
+				fileSeq = ORI_FILE_SEQ;
+				startCdrSeq = ORI_END_CDR_SEQ;
+			} else {
+				Scanner scanner = new Scanner(source);
+				fileSeq = scanner.nextLong();
+				startCdrSeq = scanner.nextLong();
+				scanner.close();
+			}
+
+		} catch (Exception ex) {
+			System.err.println("Couldn't init fileSeq + starCdrSeq with file: " + getSeqFilePath());
+			this.getExceptionHandler().reportException(new ProcessingException(ex, getSymbolicName()));
+			System.exit(1);
+		}
+	}
+
+	private void createDoingCdrFile() {
+		// to create sequence for file
+		DecimalFormat df4 = new DecimalFormat("0000");
+
+		outputFileName = filePath + System.getProperty("file.separator") +
+				filePrefix + "IPor." + (System.currentTimeMillis() / 1000) + "." + TEMP_HOST_NAME + "." +
+				df4.format(fileSeq) + fileSuffix; // ".bill";
+		proOutputFileName = outputFileName + ".doing";
+
+		beginCdrTime = System.currentTimeMillis() / 1000;
+		// append the header of the file to StringBuilder
+		StringBuilder fileHeader = new StringBuilder(1024);
+
+		endCdrSeq = startCdrSeq;
+		beginCdrTime = System.currentTimeMillis() / 1000;
+
+		String hostName;
+		hostName = TEMP_HOST_NAME;
+		fileHeader.append("ORH");
+		fileHeader.append("\0");
+		fileHeader.append(hostName);
+		for (int i = 0; i < 33 - hostName.length(); i++) {
+			fileHeader.append("\0");
+		}
+
+		DecimalFormat df10 = new DecimalFormat("0000000000");
+
+		fileHeader.append(df10.format(startCdrSeq) + "\0");
+		fileHeader.append(df10.format(startCdrSeq) + "\0");
+		fileHeader.append(df10.format(beginCdrTime) + "\0");
+		fileHeader.append(df10.format(beginCdrTime) + "\0");
+
+		recordCount = 0;
+		fileHeader.append(df10.format(recordCount) + "\0");
+
+		try {
+			File file = new File(proOutputFileName);
+			FileWriter fwriter = new FileWriter(file, true);
+			validWriter = new BufferedWriter(fwriter, BUF_SIZE);
+			validWriter.write(fileHeader.toString());
+			validWriter.flush();
+			validWriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	/**
