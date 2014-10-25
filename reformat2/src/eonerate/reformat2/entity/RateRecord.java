@@ -32,8 +32,8 @@ public class RateRecord extends RatingRecord {
 
 	ILogger LOG_PROCESSING = LogUtil.getLogUtil().getLogger("Processing");
 
-	static long startSequenceCDR = 1;
-	static boolean isOpened = false;
+	//	static long startSequenceCDR = 1;
+	//	static boolean isOpened = false;
 
 	// These are the mappings to the fields for input CDR
 	public static final int IDX_A_NUMBER = 0;
@@ -717,7 +717,7 @@ public class RateRecord extends RatingRecord {
 
 	}
 
-	public String unmapOriginalData() {
+	public String unmapOriginalData(long startSequenceCDR) {
 
 		String outFields[] = new String[138];
 		int NumberOfFields;
@@ -734,34 +734,35 @@ public class RateRecord extends RatingRecord {
 			errMessage = tmpErr.getType() + " -> " + tmpErr.getMessage();
 		}
 
-		// open file sequence to take CDR sequence
-		if (!isOpened)
-			try {
-				File source = new File("config/sequence.txt");
-				if (!source.exists()) {
-					PrintWriter out = new PrintWriter(new FileOutputStream(
-							"config/sequence.txt"));
-					out.println(1);
-					out.println(1);
-					out.flush();
-					out.close();
-				}
-				isOpened = true;
-				Scanner scanner = new Scanner(source);
-				Long fileSequence = scanner.nextLong();
-				startSequenceCDR = scanner.nextLong();
-				scanner.close();
-
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+		//		// open file sequence to take CDR sequence
+		//		if (!isOpened) {
+		//			try {
+		//				File source = new File("config/sequence.txt");
+		//				if (!source.exists()) {
+		//					PrintWriter out = new PrintWriter(new FileOutputStream(
+		//							"config/sequence.txt"));
+		//					out.println(1);
+		//					out.println(1);
+		//					out.flush();
+		//					out.close();
+		//				}
+		//				isOpened = true;
+		//				Scanner scanner = new Scanner(source);
+		//				Long fileSequence = scanner.nextLong();
+		//				startSequenceCDR = scanner.nextLong();
+		//				scanner.close();
+		//
+		//			} catch (Exception e) {
+		//				e.printStackTrace();
+		//			}
+		//		}
 		DecimalFormat df = new DecimalFormat("0000000000");
 
 		outFields[OrpRecord.Field.RecordType.ordinal()] = getRecordType(RecordType);
 		outFields[OrpRecord.Field.RecordSequenceNumber.ordinal()] = df.format(startSequenceCDR);
-		if (isOpened) {
-			startSequenceCDR++;
-		}
+		//		if (isOpened) {
+		//			startSequenceCDR++;
+		//		}
 
 		outFields[OrpRecord.Field.ActivityType.ordinal()] = getActivityType(RecordType);
 		outFields[OrpRecord.Field.ResultCode.ordinal()] = "0";

@@ -60,7 +60,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
 
-import ElcRate.adapter.file.FlatFileOutputAdapter;
 import ElcRate.record.FlatRecord;
 import ElcRate.record.IRecord;
 import eonerate.reformat2.entity.RateRecord;
@@ -68,8 +67,9 @@ import eonerate.reformat2.entity.RateRecord;
 /**
  * The Output Adapter is reponsible for writing the completed records to the
  * target file.
+ * @author daonh + manucian86
  */
-public class FileOutputAdapter extends FlatFileOutputAdapter {
+public class FileOutputAdapter extends MyFlatFileOutputAdapter {
 
 	private void readConfig() {
 		// Check size, time, number of records
@@ -93,9 +93,9 @@ public class FileOutputAdapter extends FlatFileOutputAdapter {
 			NodeList nList2 = doc.getElementsByTagName("maxRecord");
 			NodeList nList3 = doc.getElementsByTagName("maxSize");
 
-			super.maxTime = Double.parseDouble(nList1.item(0).getTextContent());
-			super.maxRecord = Long.parseLong(nList2.item(0).getTextContent());
-			super.maxSize = Double.parseDouble(nList3.item(0).getTextContent());
+			maxTime = Double.parseDouble(nList1.item(0).getTextContent());
+			maxRecord = Long.parseLong(nList2.item(0).getTextContent());
+			maxSize = Double.parseDouble(nList3.item(0).getTextContent());
 
 		} catch (Exception ex) {
 			System.err.println("Couldn't read " + filePath + " config");
@@ -126,9 +126,7 @@ public class FileOutputAdapter extends FlatFileOutputAdapter {
 	 * adapter.
 	 */
 	@Override
-	public Collection<IRecord> procValidRecord(IRecord r)
-
-	{
+	public Collection<IRecord> procValidRecord(IRecord r) {
 		FlatRecord tmpOutRecord;
 		RateRecord tmpInRecord;
 
@@ -137,7 +135,7 @@ public class FileOutputAdapter extends FlatFileOutputAdapter {
 
 		tmpOutRecord = new FlatRecord();
 		tmpInRecord = (RateRecord) r;
-		tmpOutRecord.setData(tmpInRecord.unmapOriginalData());
+		tmpOutRecord.setData(tmpInRecord.unmapOriginalData(startCdrSeq + recordCount));
 
 		Outbatch.add((IRecord) tmpOutRecord);
 

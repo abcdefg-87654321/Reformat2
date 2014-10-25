@@ -1,28 +1,35 @@
-2014-10-24 17:22:30,292 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
-2014-10-24 17:22:30,295 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
-2014-10-24 17:22:30,297 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
-2014-10-24 17:22:30,325 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
-2014-10-24 17:22:30,436 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_2>
-2014-10-24 17:22:30,449 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_1>
-2014-10-24 17:22:30,538 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_3>
-2014-10-24 17:22:30,688 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_0>
-2014-10-24 17:22:30,828 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <119> ms
-2014-10-24 17:22:30,831 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <117> ms
-2014-10-24 17:22:30,834 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <134> ms
-2014-10-24 17:22:30,836 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
-2014-10-24 17:22:30,836 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
-2014-10-24 17:22:30,836 TransactionManager.java       [ 268] INFO  -             Duration <298> ms
-2014-10-24 17:22:30,836 TransactionManager.java       [ 270] INFO  -             Speed    <16> records /sec
-2014-10-24 17:22:30,837 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
-2014-10-24 17:22:30,837 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
-2014-10-24 17:22:30,837 TransactionManager.java       [ 268] INFO  -             Duration <389> ms
-2014-10-24 17:22:30,837 TransactionManager.java       [ 270] INFO  -             Speed    <12> records /sec
-2014-10-24 17:22:30,840 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <137> ms
-2014-10-24 17:22:30,878 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
-2014-10-24 17:22:30,878 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
-2014-10-24 17:22:30,878 TransactionManager.java       [ 268] INFO  -             Duration <442> ms
-2014-10-24 17:22:30,878 TransactionManager.java       [ 270] INFO  -             Speed    <11> records /sec
-2014-10-24 17:22:30,883 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
-2014-10-24 17:22:30,883 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
-2014-10-24 17:22:30,883 TransactionManager.java       [ 268] INFO  -             Duration <195> ms
-2014-10-24 17:22:30,883 TransactionManager.java       [ 270] INFO  -             Speed    <25> records /sec
+2014-10-25 16:15:01,350 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-25 16:15:01,362 TransactionManager.java       [ 229] INFO  - Opened transaction <1> for pipeline <Reformat2Pipe_0>
+2014-10-25 16:15:01,396 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <13> ms
+2014-10-25 16:15:01,400 TransactionManager.java       [ 266] INFO  - Transaction <1> closed
+2014-10-25 16:15:01,400 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-25 16:15:01,400 TransactionManager.java       [ 268] INFO  -             Duration <38> ms
+2014-10-25 16:15:01,400 TransactionManager.java       [ 270] INFO  -             Speed    <131> records /sec
+2014-10-25 16:16:31,709 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-25 16:16:31,710 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-25 16:16:31,714 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-25 16:16:31,727 TransactionManager.java       [ 229] INFO  - Opened transaction <2> for pipeline <Reformat2Pipe_0>
+2014-10-25 16:16:31,735 TransactionManager.java       [ 229] INFO  - Opened transaction <3> for pipeline <Reformat2Pipe_1>
+2014-10-25 16:16:31,741 TransactionManager.java       [ 229] INFO  - Opened transaction <4> for pipeline <Reformat2Pipe_3>
+2014-10-25 16:16:31,743 JDBCInputAdapter.java         [1134] INFO  - Input  <DBInpAdapter> found <5> events for processing
+2014-10-25 16:16:31,751 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <12> ms
+2014-10-25 16:16:31,803 TransactionManager.java       [ 229] INFO  - Opened transaction <5> for pipeline <Reformat2Pipe_2>
+2014-10-25 16:16:31,806 TransactionManager.java       [ 266] INFO  - Transaction <2> closed
+2014-10-25 16:16:31,806 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-25 16:16:31,806 TransactionManager.java       [ 268] INFO  -             Duration <79> ms
+2014-10-25 16:16:31,806 TransactionManager.java       [ 270] INFO  -             Speed    <63> records /sec
+2014-10-25 16:16:31,808 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <64> ms
+2014-10-25 16:16:31,821 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <73> ms
+2014-10-25 16:16:31,829 TransactionManager.java       [ 266] INFO  - Transaction <4> closed
+2014-10-25 16:16:31,829 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-25 16:16:31,829 TransactionManager.java       [ 268] INFO  -             Duration <88> ms
+2014-10-25 16:16:31,829 TransactionManager.java       [ 270] INFO  -             Speed    <56> records /sec
+2014-10-25 16:16:31,830 TransactionManager.java       [ 266] INFO  - Transaction <3> closed
+2014-10-25 16:16:31,830 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-25 16:16:31,830 TransactionManager.java       [ 268] INFO  -             Duration <95> ms
+2014-10-25 16:16:31,830 TransactionManager.java       [ 270] INFO  -             Speed    <52> records /sec
+2014-10-25 16:16:31,831 AbstractOutputAdapter.java    [ 457] INFO  - Output <SOutAdapter> persisted <7> events from a batch of <7> events in <8> ms
+2014-10-25 16:16:31,835 TransactionManager.java       [ 266] INFO  - Transaction <5> closed
+2014-10-25 16:16:31,835 TransactionManager.java       [ 267] INFO  - Statistics: Records  <5>
+2014-10-25 16:16:31,835 TransactionManager.java       [ 268] INFO  -             Duration <32> ms
+2014-10-25 16:16:31,835 TransactionManager.java       [ 270] INFO  -             Speed    <156> records /sec

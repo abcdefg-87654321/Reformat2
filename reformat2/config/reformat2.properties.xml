@@ -160,6 +160,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>0.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_0>
@@ -263,6 +264,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>1.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_1>
@@ -366,6 +368,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>2.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_2>
@@ -469,6 +472,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>3.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_3>
@@ -572,6 +576,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>4.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_4>
@@ -675,6 +680,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>5.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_5>
@@ -778,6 +784,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>6.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_6>
@@ -881,6 +888,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>7.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_7>
@@ -984,6 +992,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>8.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_8>
@@ -1087,6 +1096,7 @@
 				<ErrFilePath>data</ErrFilePath>
 				<ErrFilePrefix>9.</ErrFilePrefix>
 				<ErrFileSuffix>.err</ErrFileSuffix>
+				<ProcessingPrefix>doing.</ProcessingPrefix>
 			</SOutAdapter>
 		</OutputAdapter>
 	</Reformat2Pipe_9>
@@ -1099,8 +1109,8 @@
 			</DataSourceBuilder>
 			<DataSource>
 				<eOneRateDB>
-					<!-- <db_url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))</db_url> -->
-					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))</db_url>
+					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))</db_url>
+<!-- 					<db_url>jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.111)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=10.149.3.112)(PORT=1521)))(CONNECT_DATA=(SERVICE_NAME=eonerate)))</db_url> -->
 					<driver>oracle.jdbc.driver.OracleDriver</driver>
 					<username>vnp_common</username>
 					<password>vnp_common</password>
