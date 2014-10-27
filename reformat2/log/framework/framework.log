@@ -15931,3 +15931,114 @@
 2014-10-25 16:14:56,250 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_9> ***
 2014-10-25 16:14:56,251 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_9>
 2014-10-25 16:14:56,251 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:31,276 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-27 16:09:31,280 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-27 16:09:31,393 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-27 16:09:32,841 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-27 16:09:32,847 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-27 16:09:32,850 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-27 16:09:32,850 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-27 16:09:32,853 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-27 16:09:32,858 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-27 16:09:32,861 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,887 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-27 16:09:32,887 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-27 16:09:32,887 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,906 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-27 16:09:32,915 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-27 16:09:32,916 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,926 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-27 16:09:32,926 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-27 16:09:32,926 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,931 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_4> ***
+2014-10-27 16:09:32,932 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_4>
+2014-10-27 16:09:32,933 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,937 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_5> ***
+2014-10-27 16:09:32,938 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_5>
+2014-10-27 16:09:32,943 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,948 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_6> ***
+2014-10-27 16:09:32,948 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_6>
+2014-10-27 16:09:32,950 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,956 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_7> ***
+2014-10-27 16:09:32,956 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_7>
+2014-10-27 16:09:32,957 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,961 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_8> ***
+2014-10-27 16:09:32,961 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_8>
+2014-10-27 16:09:32,961 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 16:09:32,966 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_9> ***
+2014-10-27 16:09:32,966 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_9>
+2014-10-27 16:09:32,967 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:36,314 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-27 17:01:36,318 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-27 17:01:36,444 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-27 17:01:37,529 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-27 17:01:37,532 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-27 17:01:37,535 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-27 17:01:37,536 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 1ms.
+2014-10-27 17:01:37,539 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-27 17:01:37,544 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-27 17:01:37,545 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,560 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-27 17:01:37,560 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-27 17:01:37,561 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,570 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-27 17:01:37,578 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-27 17:01:37,578 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,584 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-27 17:01:37,585 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-27 17:01:37,586 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,590 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_4> ***
+2014-10-27 17:01:37,591 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_4>
+2014-10-27 17:01:37,591 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,596 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_5> ***
+2014-10-27 17:01:37,596 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_5>
+2014-10-27 17:01:37,597 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,601 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_6> ***
+2014-10-27 17:01:37,602 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_6>
+2014-10-27 17:01:37,603 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,607 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_7> ***
+2014-10-27 17:01:37,607 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_7>
+2014-10-27 17:01:37,608 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,612 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_8> ***
+2014-10-27 17:01:37,612 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_8>
+2014-10-27 17:01:37,612 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:01:37,616 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_9> ***
+2014-10-27 17:01:37,616 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_9>
+2014-10-27 17:01:37,617 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:32,180 ElcRate.java                  [ 592] INFO  - :::: ElcRate Started ::::
+2014-10-27 17:05:32,183 ElcRate.java                  [ 603] INFO  - ElcRate Build ElcRate V1.5.2.1, Build 001 (20140508)
+2014-10-27 17:05:32,252 BCPDataSource.java            [ 206] INFO  - Creating DataSource <eOneRateDB> using driver <oracle.jdbc.driver.OracleDriver> from URL <jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=192.168.6.207)(PORT=1521))(CONNECT_DATA=(SERVER=dedicated)(SERVICE_NAME=EONERATE)))>
+2014-10-27 17:05:33,206 DataSourceFactory.java        [ 190] INFO  - Successfully created DataSource <eOneRateDB>
+2014-10-27 17:05:33,210 ElcRateSocket.java            [ 155] INFO  - Listener on port <8086> is running...
+2014-10-27 17:05:33,213 CacheFactory.java             [ 173] INFO  - Starting CacheFactory initialisation
+2014-10-27 17:05:33,213 CacheFactory.java             [ 479] INFO  - CacheFactory initialised in 0ms.
+2014-10-27 17:05:33,216 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_0> ***
+2014-10-27 17:05:33,222 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_0>
+2014-10-27 17:05:33,223 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,238 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_1> ***
+2014-10-27 17:05:33,238 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_1>
+2014-10-27 17:05:33,238 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,249 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_2> ***
+2014-10-27 17:05:33,250 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_2>
+2014-10-27 17:05:33,254 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,263 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_3> ***
+2014-10-27 17:05:33,263 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_3>
+2014-10-27 17:05:33,265 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,271 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_4> ***
+2014-10-27 17:05:33,272 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_4>
+2014-10-27 17:05:33,272 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,276 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_5> ***
+2014-10-27 17:05:33,276 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_5>
+2014-10-27 17:05:33,277 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,281 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_6> ***
+2014-10-27 17:05:33,282 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_6>
+2014-10-27 17:05:33,282 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,287 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_7> ***
+2014-10-27 17:05:33,287 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_7>
+2014-10-27 17:05:33,287 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,291 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_8> ***
+2014-10-27 17:05:33,291 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_8>
+2014-10-27 17:05:33,292 TransactionManager.java       [ 206] INFO  - TransactionManager initialised
+2014-10-27 17:05:33,295 Pipeline.java                 [ 316] INFO  - *** Constructing Batch pipeline <Reformat2Pipe_9> ***
+2014-10-27 17:05:33,295 TransactionManager.java       [ 172] INFO  - Starting TransactionManager initialisation for pipeline <Reformat2Pipe_9>
+2014-10-27 17:05:33,295 TransactionManager.java       [ 206] INFO  - TransactionManager initialised

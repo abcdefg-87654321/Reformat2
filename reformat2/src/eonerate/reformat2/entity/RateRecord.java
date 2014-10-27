@@ -773,9 +773,9 @@ public class RateRecord extends RatingRecord {
 		if (RecordType.equals("1"))
 		{
 			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
-			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1410393600";
-			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1410393601";
-			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1410393620";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] =df.format(super.EventStartDate.getTime()/1000+Duration);
 			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
 			outFields[OrpRecord.Field.BNumber.ordinal()] = NumberB;
 			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
@@ -902,9 +902,9 @@ public class RateRecord extends RatingRecord {
 		if (RecordType.equals("4"))
 		{
 			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
-			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1413947207";
-			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1413947207";
-			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1413947207";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000+Duration);
 			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
 			outFields[OrpRecord.Field.BNumber.ordinal()] = NumberB;
 			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
@@ -1032,38 +1032,38 @@ public class RateRecord extends RatingRecord {
 
 		if (RecordType.equals("5"))
 		{
-			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "slu999";
-			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = "1398290056";
-			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = "1398290057";
-			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = "1398290157";
+			outFields[OrpRecord.Field.RecordOrigin.ordinal()] = "offline";
+			outFields[OrpRecord.Field.ActivityOfferedDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityAnsweredDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000);
+			outFields[OrpRecord.Field.ActivityDisconnectDateTime.ordinal()] = df.format(super.EventStartDate.getTime()/1000+Duration);
 			outFields[OrpRecord.Field.ANumber.ordinal()] = NumberA;
-			outFields[OrpRecord.Field.BNumber.ordinal()] = "GPRS_LOCATION";
+			outFields[OrpRecord.Field.BNumber.ordinal()] = "";
 			outFields[OrpRecord.Field.ExternalId.ordinal()] = NumberA;
-			outFields[OrpRecord.Field.ExternalIdtype.ordinal()] = "0";
-			outFields[OrpRecord.Field.MSCID.ordinal()] = "";
+			outFields[OrpRecord.Field.ExternalIdtype.ordinal()] = "1";
+			outFields[OrpRecord.Field.MSCID.ordinal()] = "84910100401999";
 			outFields[OrpRecord.Field.MSRN.ordinal()] = "";
 			outFields[OrpRecord.Field.ApplicationType.ordinal()] = "10";
-			outFields[OrpRecord.Field.Subtype.ordinal()] = "30025";
+			outFields[OrpRecord.Field.Subtype.ordinal()] = "30024";
 			outFields[OrpRecord.Field.UnitType.ordinal()] = "3";
-			outFields[OrpRecord.Field.ReferenceNumber.ordinal()] = "90000";
-			outFields[OrpRecord.Field.InitialAUT.ordinal()] = "30040";
+			outFields[OrpRecord.Field.ReferenceNumber.ordinal()] = "195";
+			outFields[OrpRecord.Field.InitialAUT.ordinal()] = "30039";
 			outFields[OrpRecord.Field.ChargeType.ordinal()] = "";
-			outFields[OrpRecord.Field.SGSN.ordinal()] = "84910299999";
-			outFields[OrpRecord.Field.ClearCause.ordinal()] = "16";
+			outFields[OrpRecord.Field.SGSN.ordinal()] = "8491020467";
+			outFields[OrpRecord.Field.ClearCause.ordinal()] = "400";
 			outFields[OrpRecord.Field.CellID.ordinal()] = "";
-			outFields[OrpRecord.Field.NetworkCalltype.ordinal()] = "";
-			outFields[OrpRecord.Field.ConsumedAmount.ordinal()] = "123450";
+			outFields[OrpRecord.Field.NetworkCalltype.ordinal()] = "0";
+			outFields[OrpRecord.Field.ConsumedAmount.ordinal()] = "1048576";
 			outFields[OrpRecord.Field.UTCOffset.ordinal()] = "420";
-			outFields[OrpRecord.Field.Origin.ordinal()] = "2";
+			outFields[OrpRecord.Field.Origin.ordinal()] = "0";
 			outFields[OrpRecord.Field.PortedNumber.ordinal()] = "";
-			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = "0";
+			outFields[OrpRecord.Field.OriginalChargeAmount.ordinal()] = "";
 			outFields[OrpRecord.Field.OriginalChargeCurrency.ordinal()] = "";
 			outFields[OrpRecord.Field.GSMProviderID.ordinal()] = "";
 			outFields[OrpRecord.Field.APN.ordinal()] = "m3-card";
 			outFields[OrpRecord.Field.QOS.ordinal()] = "4001";
 			outFields[OrpRecord.Field.ReservationType.ordinal()] = "1";
 			outFields[OrpRecord.Field.PDPInitType.ordinal()] = "0";
-			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = "4520200003500100";
+			outFields[OrpRecord.Field.ServiceIDCellIDLAI.ordinal()] = "";
 			outFields[OrpRecord.Field.ECIMessageType.ordinal()] = "";
 			outFields[OrpRecord.Field.ECIAssociatedNumber.ordinal()] = "";
 			outFields[OrpRecord.Field.ECIMISSIDN.ordinal()] = "";
@@ -1093,8 +1093,8 @@ public class RateRecord extends RatingRecord {
 			outFields[OrpRecord.Field.CallProcessorCallDirection.ordinal()] = "";
 			outFields[OrpRecord.Field.CallProcessorAnumberanswertime.ordinal()] = "";
 			outFields[OrpRecord.Field.CallProcessorBnumberanswertime.ordinal()] = "";
-			outFields[OrpRecord.Field.Billable.ordinal()] = "";
-			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.Billable.ordinal()] = "1";
+			outFields[OrpRecord.Field.ExternalSystemSequenceNumber.ordinal()] = "95";
 			outFields[OrpRecord.Field.OsaReservationStartTime.ordinal()] = "";
 			outFields[OrpRecord.Field.OsaReservationType.ordinal()] = "";
 			outFields[OrpRecord.Field.OsaSubscriberId.ordinal()] = "";
@@ -1147,15 +1147,15 @@ public class RateRecord extends RatingRecord {
 			outFields[OrpRecord.Field.Ocssubotherlocationtype.ordinal()] = "";
 			outFields[OrpRecord.Field.Ocsteleservicetype.ordinal()] = "";
 			outFields[OrpRecord.Field.CallprocessorTimeZone.ordinal()] = "";
-			outFields[OrpRecord.Field.Offereddtmsec.ordinal()] = "156";
-			outFields[OrpRecord.Field.Answereddtmsec.ordinal()] = "161";
-			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()] = "164";
+			outFields[OrpRecord.Field.Offereddtmsec.ordinal()] = "";
+			outFields[OrpRecord.Field.Answereddtmsec.ordinal()] = "";
+			outFields[OrpRecord.Field.Disconnectdtmsec.ordinal()] = "";
 			outFields[OrpRecord.Field.PointTargetExternalIdType.ordinal()] = "";
 			outFields[OrpRecord.Field.NetworkPortingPrefix.ordinal()] = "";
 			outFields[OrpRecord.Field.IMSIA.ordinal()] = "";
 			outFields[OrpRecord.Field.IMSIB.ordinal()] = "";
-			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()] = NumberA;
-			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()] = NumberA;
+			outFields[OrpRecord.Field.type1NormalizedNumber.ordinal()] = "";
+			outFields[OrpRecord.Field.type2NormalizedNumber.ordinal()] = "";
 			outFields[OrpRecord.Field.CallingNumberPresentation.ordinal()] = "0";
 			outFields[OrpRecord.Field.networkaddressplan.ordinal()] = "1";
 		}
