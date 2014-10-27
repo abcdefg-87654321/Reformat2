@@ -1,4 +1,4 @@
-/* Formatted on 10/23/2014 4:09:17 PM (QP5 v5.215.12089.38647) */
+/* Formatted on 10/25/2014 10:27:31 (QP5 v5.227.12220.39754) */
 INSERT INTO VNP_DATA.HOT_RATED_CDR_DEV (MAP_ID,
                                         A_NUMBER,
                                         CDR_TYPE,
@@ -80,10 +80,14 @@ SELECT * FROM hot_rated_cdr_dev;
 
 SELECT a_number, rerate_flag FROM hot_rated_cdr_DEV;
 
-INSERT INTO hot_rated_cdr
-   SELECT * FROM hot_rated_cdr_dev;
+--INSERT INTO hot_rated_cdr
+--   SELECT * FROM hot_rated_cdr_dev;
 
 UPDATE hot_rated_cdr_dev
    SET rerate_flag = 0;
+
+UPDATE hot_rated_cdr_dev
+   SET rerate_flag = 0
+ WHERE data_part = 0;
 
 COMMIT;
