@@ -36,11 +36,11 @@ INSERT INTO VNP_DATA.HOT_RATED_CDR_DEV (MAP_ID,
                                         AUT_FINAL_ID,
                                         TARIFF_PLAN_ID)
    SELECT MAP_ID,
-          '84943841472',
+          '84943841475',
           CDR_TYPE,
           CREATED_TIME,
           CDR_START_TIME,
-          DATA_PART,
+          5,
           DURATION,
           TOTAL_USAGE,
           B_NUMBER,
@@ -88,6 +88,6 @@ UPDATE hot_rated_cdr_dev
 
 UPDATE hot_rated_cdr_dev
    SET rerate_flag = 0
- WHERE data_part = 0;
+ WHERE data_part = 5;
 
 COMMIT;
